@@ -9,7 +9,7 @@
 
 # <div align="center">Descrição do projeto</div>
 Um roguelite, shoot'em up, autoshooter com perspectiva topdown, inspirado em Vampire Survivors. 
-O jogo se passaria no dia 30 de outubro, após uma alunoa da fatec não ter visto o aviso de que não teria aula no dia, assim indo para a faculdade. 
+O jogo se passaria no dia 30 de outubro, após uma aluna da Fatec não ter visto o aviso de que não teria aula no dia, assim indo para a faculdade. 
 No mesmo dia um ritual foi feito no cemitério próximo atraindo e liberando monstros e fantasmas. 
 Agora a estudante deve sobreviver a hordas de monstros, enquanto ela aguarda que o ritual acabe, ou alguém a salve.
 
