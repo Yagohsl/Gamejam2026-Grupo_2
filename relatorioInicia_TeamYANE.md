@@ -21,4 +21,7 @@ O jogo se passa na Fatec Campinas e o protagonista é uma estudante. O jogo util
 * Aseprite (Sprite work)
 
 # Concept art inicial:
+### Spritesheet de um inimigo base:
+<img width="1020" height="520" alt="ghotsV1" src="https://github.com/user-attachments/assets/ab90bcb9-7d84-4a6e-b020-2d39af92552c" />
+
  
