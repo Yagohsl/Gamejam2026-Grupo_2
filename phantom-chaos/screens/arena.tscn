@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b5cwefql2o4y6"]
+
+[ext_resource type="PackedScene" uid="uid://ceinbu7hufm50" path="res://utils/spawner.tscn" id="2_75ymw"]
+[ext_resource type="PackedScene" uid="uid://bagsjkmj4eeu2" path="res://player/player.tscn" id="2_vyub2"]
+
+[node name="Arena" type="Node2D" unique_id=996573635]
+
+[node name="Player" parent="." unique_id=1147411066 instance=ExtResource("2_vyub2")]
+position = Vector2(182, 141)
+
+[node name="Spawner" parent="." unique_id=438922561 node_paths=PackedStringArray("player") instance=ExtResource("2_75ymw")]
+position = Vector2(243, -167)
+player = NodePath("../Player")

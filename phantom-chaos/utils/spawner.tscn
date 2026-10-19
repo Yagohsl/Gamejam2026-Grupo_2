@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ceinbu7hufm50"]
+
+[ext_resource type="Script" uid="uid://dg814jjttdicv" path="res://utils/spawner.gd" id="1_fpwof"]
+[ext_resource type="PackedScene" uid="uid://d3hp6y1y16uuc" path="res://enemies/inimigo.tscn" id="2_6hs48"]
+
+[node name="Spawner" type="Node2D" unique_id=438922561]
+script = ExtResource("1_fpwof")
+enemy = ExtResource("2_6hs48")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1773188057]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=815756721]
+offset_left = 521.0
+offset_top = -83.0
+offset_right = 563.0
+offset_bottom = -43.0
+
+[node name="Minute" type="Label" parent="UI/HBoxContainer" unique_id=861089044]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="UI/HBoxContainer" unique_id=371164104]
+visible = false
+layout_mode = 2
+text = ":"
+
+[node name="Second" type="Label" parent="UI/HBoxContainer" unique_id=897954826]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "00"
+
+[node name="Timer" type="Timer" parent="." unique_id=982104820]
+autostart = true
+
+[node name="Pattern" type="Timer" parent="." unique_id=1049099354]
+wait_time = 10.0
+autostart = true
+
+[node name="Elite" type="Timer" parent="." unique_id=453179282]
+wait_time = 9.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
