@@ -8,6 +8,9 @@ size = Vector2(60, 60)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(61, 60)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
+size = Vector2(60, 58)
+
 [node name="Player" type="CharacterBody2D" unique_id=1147411066]
 script = ExtResource("1_onrkg")
 speed = 200
@@ -22,3 +25,25 @@ shape = SubResource("RectangleShape2D_hqtel")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=913077993]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1701630665]
+
+[node name="SelfDamage" type="Area2D" parent="." unique_id=2006525074]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionHitbox" type="CollisionShape2D" parent="SelfDamage" unique_id=1841567754]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_oul6g")
+
+[node name="Health" type="ProgressBar" parent="." unique_id=378219711]
+unique_name_in_owner = true
+offset_left = -47.0
+offset_top = -62.0
+offset_right = 48.0
+offset_bottom = -35.0
+value = 100.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1950215921]
+autostart = true
+
+[connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
