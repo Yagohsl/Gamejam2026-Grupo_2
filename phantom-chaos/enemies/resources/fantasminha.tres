@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://uthltrrrla1l"]
+
+[ext_resource type="Script" uid="uid://cqpabsa3xhq26" path="res://enemies/enemy_type.gd" id="1_7dlfg"]
+[ext_resource type="Texture2D" uid="uid://dkvyhdif8psm" path="res://assets/enemies/fantasminha_resized.png" id="2_pkoev"]
+
+[resource]
+script = ExtResource("1_7dlfg")
+texture = ExtResource("2_pkoev")
+hframes = 1
+vframes = 4
+metadata/_custom_type_script = "uid://cqpabsa3xhq26"

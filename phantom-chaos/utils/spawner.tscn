@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dg814jjttdicv" path="res://utils/spawner.gd" id="1_fpwof"]
 [ext_resource type="PackedScene" uid="uid://d3hp6y1y16uuc" path="res://enemies/inimigo.tscn" id="2_6hs48"]
+[ext_resource type="Script" uid="uid://cqpabsa3xhq26" path="res://enemies/enemy_type.gd" id="3_m3jg8"]
+[ext_resource type="Resource" uid="uid://uthltrrrla1l" path="res://enemies/resources/fantasminha.tres" id="4_fq7nl"]
 
 [node name="Spawner" type="Node2D" unique_id=438922561]
 script = ExtResource("1_fpwof")
 enemy = ExtResource("2_6hs48")
+enemy_types = Array[ExtResource("3_m3jg8")]([ExtResource("4_fq7nl")])
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1773188057]
 

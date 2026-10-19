@@ -2,9 +2,10 @@ extends Node2D
 
 @export var player : CharacterBody2D
 @export var enemy : PackedScene
-
+@export var enemy_types : Array[Enemy]
 # distancia de spawn do inimigo
 var distance = 400
+
 
 var minute: int:
 	set(value):
@@ -20,9 +21,11 @@ var second: int:
 		%Second.text = str(second).lpad(2,'0')
 	
 func spawn(pos : Vector2):
-	#var de instancia o inimigo
+	#var de instancia do inimigo
 	var enemy_instance = enemy.instantiate()
 	
+	#um inimigo diferente a cada minuto
+	enemy_instance.type = enemy_types[min(minute, enemy_types.size() -1)]
 	#indica a posicao do inimigo e do player
 	enemy_instance.position = pos
 	enemy_instance.player = player
