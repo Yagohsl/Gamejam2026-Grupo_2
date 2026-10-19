@@ -8,4 +8,5 @@ script = ExtResource("1_7dlfg")
 texture = ExtResource("2_pkoev")
 hframes = 1
 vframes = 4
+damage = 2.0
 metadata/_custom_type_script = "uid://cqpabsa3xhq26"

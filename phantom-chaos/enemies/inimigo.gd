@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var player = CharacterBody2D
 var direction : Vector2
 var speed : float = 150.0
+var damage : float
 
 var type: Enemy:
 	set(value):
@@ -10,6 +11,7 @@ var type: Enemy:
 		$Sprite2D.texture = value.texture
 		$Sprite2D.hframes = type.hframes
 		$Sprite2D.vframes = type.vframes
+		damage = value.damage
 
 func _physics_process(delta: float) -> void:
 	velocity = (player.position - position).normalized() * speed
