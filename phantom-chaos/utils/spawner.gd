@@ -4,7 +4,7 @@ extends Node2D
 @export var enemy : PackedScene
 @export var enemy_types : Array[Enemy]
 # distancia de spawn do inimigo
-var distance = 400
+@export var distance = 700
 
 
 var minute: int:
@@ -44,3 +44,8 @@ func amount(n : int = 1):
 func _on_timer_timeout() -> void:
 	second += 1
 	amount(second % 10)
+
+
+func _on_pattern_timeout() -> void:
+	for i in range(70):
+		spawn(get_random_position())

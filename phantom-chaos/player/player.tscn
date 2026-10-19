@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_hqtel")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=913077993]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1701630665]
+zoom = Vector2(0.5, 0.5)
 
 [node name="SelfDamage" type="Area2D" parent="." unique_id=2006525074]
 collision_layer = 0

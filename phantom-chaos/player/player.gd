@@ -32,7 +32,6 @@ func take_damage(amount):
 	print(amount)
 
 func _on_timer_timeout() -> void:
-	#cooldown de 1s a cada hit
 	%CollisionHitbox.set_deferred("disabled", true)
 	%CollisionHitbox.set_deferred("disabled", false)
 
