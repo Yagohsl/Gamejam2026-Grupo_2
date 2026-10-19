@@ -5,6 +5,7 @@ extends Node2D
 @export var enemy_types : Array[Enemy]
 # distancia de spawn do inimigo
 @export var distance = 700
+var can_spawn : bool = true
 
 
 var minute: int:
@@ -20,7 +21,18 @@ var second: int:
 			minute += 1
 		%Second.text = str(second).lpad(2,'0')
 	
+func _physics_process(delta: float) -> void:
+	# otimizacao
+	# ira spawnar novos inimigos apenas se o total for menor que 500
+	if get_tree().get_node_count_in_group("Enemy") < 500:
+		can_spawn = true
+	else:
+		can_spawn = false
+		
 func spawn(pos : Vector2):
+	if not can_spawn:
+		return
+		
 	#var de instancia do inimigo
 	var enemy_instance = enemy.instantiate()
 	

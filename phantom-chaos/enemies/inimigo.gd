@@ -14,5 +14,11 @@ var type: Enemy:
 		damage = value.damage
 
 func _physics_process(delta: float) -> void:
+	var dist_rendering = (player.position - position).length()
+	
+	#otimizacao
+	# se o inimigo esta a uma distancia maior que 1200px, despawna
+	if dist_rendering >= 1200: queue_free()
+	
 	velocity = (player.position - position).normalized() * speed
 	move_and_collide(velocity * delta)
