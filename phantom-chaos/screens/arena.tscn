@@ -9,5 +9,5 @@
 position = Vector2(182, 141)
 
 [node name="Spawner" parent="." unique_id=438922561 node_paths=PackedStringArray("player") instance=ExtResource("2_75ymw")]
-position = Vector2(243, -167)
+position = Vector2(76, -283)
 player = NodePath("../Player")
