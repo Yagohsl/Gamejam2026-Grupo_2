@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SingleShot" format=3 uid="uid://bfvql2836gby3"]
+
+[ext_resource type="PackedScene" uid="uid://ddfrtfn44ye1h" path="res://player/projetil.tscn" id="1_jl5jv"]
+[ext_resource type="Script" uid="uid://clkxs8pccp5fp" path="res://player/SingleShot.gd" id="2_6bol1"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uebf4"]
+size = Vector2(5, 5)
+
+[resource]
+script = ExtResource("2_6bol1")
+title = "Projetil"
+damage = 1.0
+texture = SubResource("PlaceholderTexture2D_uebf4")
+cooldown = 1.0
+speed = 400.0
+metadata/_custom_type_script = "uid://clkxs8pccp5fp"

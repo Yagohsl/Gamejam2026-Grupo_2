@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ddfrtfn44ye1h"]
+
+[ext_resource type="Script" uid="uid://yd0yfih2ty08" path="res://player/projetil.gd" id="1_4dvx7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xvcbn"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e138m"]
+size = Vector2(10, 10)
+
+[node name="Projetil" type="Area2D" unique_id=754887887]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_4dvx7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1292301640]
+texture = SubResource("PlaceholderTexture2D_xvcbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617182061]
+shape = SubResource("RectangleShape2D_e138m")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1397553980]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
