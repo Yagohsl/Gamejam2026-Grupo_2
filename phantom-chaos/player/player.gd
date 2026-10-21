@@ -14,11 +14,11 @@ var nearest_enemy_distance : float = INF
 @onready var anim = $AnimationPlayer
 
 func _physics_process(delta: float) -> void:
-	if nearest_enemy:
+	if is_instance_valid(nearest_enemy):
 		nearest_enemy_distance = nearest_enemy.dist_rendering
-		print(nearest_enemy.name)
 	else:
 		nearest_enemy_distance = INF
+		
 	# movimentacao 
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
 	move_and_collide(velocity * delta)

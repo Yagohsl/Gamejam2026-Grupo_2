@@ -17,4 +17,4 @@ func shoot(source, target, scene_tree):
 	scene_tree.current_scene.add_child(projectile)
 	
 func activate(source, target, scene_tree):
-	shoot(source, target, scene_tree)
+	shoot(source, target, scene_tree) 

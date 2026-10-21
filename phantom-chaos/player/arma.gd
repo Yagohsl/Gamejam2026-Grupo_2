@@ -2,7 +2,7 @@ extends Resource
 
 class_name Weapon
 @export var title : String
-@export var damage : float
+@export var damage : int
 @export var texture : Texture2D
 @export var cooldown : float
 @export var speed : float
