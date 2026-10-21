@@ -1,31 +1,43 @@
 [gd_scene format=3 uid="uid://bagsjkmj4eeu2"]
 
 [ext_resource type="Script" uid="uid://dng5r6bjym14s" path="res://player/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bkjiwi8qmwwf6" path="res://player/slot.tscn" id="2_rkbax"]
+[ext_resource type="Resource" uid="uid://bfvql2836gby3" path="res://player/resources/projetil.tres" id="3_g1dw6"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oul6g"]
-size = Vector2(60, 60)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(61, 60)
+size = Vector2(29, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
-size = Vector2(60, 58)
+size = Vector2(30, 30)
 
 [node name="Player" type="CharacterBody2D" unique_id=1147411066]
 script = ExtResource("1_onrkg")
-speed = 200
+speed = 150
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1352562187]
+visible = false
+
+[node name="Armas" type="HBoxContainer" parent="UI" unique_id=2139984246]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot" parent="UI/Armas" unique_id=1827761604 instance=ExtResource("2_rkbax")]
+layout_mode = 2
+weapon = ExtResource("3_g1dw6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015191856]
 texture = SubResource("PlaceholderTexture2D_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1725172136]
-position = Vector2(1.5, 1)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_hqtel")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=913077993]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1701630665]
-zoom = Vector2(0.5, 0.5)
 
 [node name="SelfDamage" type="Area2D" parent="." unique_id=2006525074]
 collision_layer = 0

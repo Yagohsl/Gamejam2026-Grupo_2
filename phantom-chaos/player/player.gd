@@ -6,12 +6,19 @@ var health : float = 100:
 	set(value):
 		health = value
 		%Health.value = value
+var nearest_enemy : CharacterBody2D
+var nearest_enemy_distance : float = INF
 		
 @export var speed: int = 300
 @onready var sprite = $Sprite2D
 @onready var anim = $AnimationPlayer
 
 func _physics_process(delta: float) -> void:
+	if nearest_enemy:
+		nearest_enemy_distance = nearest_enemy.dist_rendering
+		print(nearest_enemy.name)
+	else:
+		nearest_enemy_distance = INF
 	# movimentacao 
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
 	move_and_collide(velocity * delta)
