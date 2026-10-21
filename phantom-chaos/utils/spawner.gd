@@ -52,12 +52,10 @@ func amount(n : int = 1):
 	for i in range(n):
 		spawn(get_random_position())
 
-
 func _on_timer_timeout() -> void:
 	second += 1
 	amount(second % 10)
 
-
 func _on_pattern_timeout() -> void:
-	for i in range(70):
+	for i in range(60):
 		spawn(get_random_position())
