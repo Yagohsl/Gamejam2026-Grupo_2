@@ -4,6 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://bkjiwi8qmwwf6" path="res://player/slot.tscn" id="2_rkbax"]
 [ext_resource type="Resource" uid="uid://bfvql2836gby3" path="res://player/resources/projetil.tres" id="3_g1dw6"]
 
+[sub_resource type="Gradient" id="Gradient_g1dw6"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0.03137255, 0.003921569, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yw30f"]
+gradient = SubResource("Gradient_g1dw6")
+height = 20
+
+[sub_resource type="Gradient" id="Gradient_qjkh3"]
+colors = PackedColorArray(4.933402e-07, 0, 0.3007131, 1, 0.4487393, 0.99999994, 0.9971048, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g6k8r"]
+gradient = SubResource("Gradient_qjkh3")
+height = 20
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oul6g"]
 size = Vector2(32, 32)
 
@@ -18,7 +33,6 @@ script = ExtResource("1_onrkg")
 speed = 150
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1352562187]
-visible = false
 
 [node name="Armas" type="HBoxContainer" parent="UI" unique_id=2139984246]
 offset_right = 40.0
@@ -27,6 +41,26 @@ offset_bottom = 40.0
 [node name="Slot" parent="UI/Armas" unique_id=1827761604 instance=ExtResource("2_rkbax")]
 layout_mode = 2
 weapon = ExtResource("3_g1dw6")
+
+[node name="XP" type="TextureProgressBar" parent="UI" unique_id=1343898381]
+unique_name_in_owner = true
+offset_left = -500.0
+offset_top = -285.0
+offset_right = 499.0
+offset_bottom = -265.0
+max_value = 10.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_yw30f")
+texture_progress = SubResource("GradientTexture2D_g6k8r")
+
+[node name="Level" type="Label" parent="UI/XP" unique_id=905526599]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 957.0
+offset_top = 25.0
+offset_right = 996.0
+offset_bottom = 55.0
+text = "Lv 1"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015191856]
 texture = SubResource("PlaceholderTexture2D_oul6g")

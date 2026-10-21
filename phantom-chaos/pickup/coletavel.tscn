@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://di8lnttpejwd8"]
+
+[ext_resource type="Script" uid="uid://cmhg4qbhvjd20" path="res://pickup/coletavel.gd" id="1_n4fms"]
+
+[sub_resource type="Gradient" id="Gradient_wsqnt"]
+colors = PackedColorArray(0, 0, 1, 1, 0.03137255, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_frce8"]
+gradient = SubResource("Gradient_wsqnt")
+width = 20
+height = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3lh1"]
+
+[node name="Coletavel" type="Area2D" unique_id=601144613]
+collision_layer = 4
+script = ExtResource("1_n4fms")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926547054]
+texture = SubResource("GradientTexture2D_frce8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=320658347]
+shape = SubResource("RectangleShape2D_m3lh1")
