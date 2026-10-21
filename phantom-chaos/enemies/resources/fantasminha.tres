@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_7dlfg")
+health = 3.0
 texture = ExtResource("2_pkoev")
 hframes = 1
 vframes = 4
