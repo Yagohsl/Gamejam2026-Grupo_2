@@ -4,7 +4,7 @@ extends Node2D
 @export var enemy : PackedScene
 @export var enemy_types : Array[Enemy]
 # distancia de spawn do inimigo
-@export var distance = 700
+@export var distance = 500
 var can_spawn : bool = true
 
 
