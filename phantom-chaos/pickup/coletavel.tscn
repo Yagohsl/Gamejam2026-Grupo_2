@@ -21,3 +21,5 @@ texture = SubResource("GradientTexture2D_frce8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=320658347]
 shape = SubResource("RectangleShape2D_m3lh1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

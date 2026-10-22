@@ -7,4 +7,4 @@ class_name Experience
 func activate():
 	super.activate()
 	prints("+" + str(XP) + "XP")
-	player.gain_xp(XP)
+	player.gain_XP(XP)
