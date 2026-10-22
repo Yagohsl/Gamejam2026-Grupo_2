@@ -34,11 +34,11 @@ layout_mode = 2
 text = "00"
 
 [node name="Timer" type="Timer" parent="." unique_id=982104820]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="Pattern" type="Timer" parent="." unique_id=1049099354]
-wait_time = 20.0
+wait_time = 40.0
 autostart = true
 
 [node name="Elite" type="Timer" parent="." unique_id=453179282]
