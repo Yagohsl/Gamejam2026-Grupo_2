@@ -3,15 +3,18 @@ extends CharacterBody2D
 @export var player = CharacterBody2D
 var damage_popup = preload("res://enemies/damage.tscn")
 var direction : Vector2
-var speed : float = 120.0
+@export var speed : float = 120.0
 var damage : float
 var knockback : Vector2
 var dist_rendering : float
 
+
+var drop = preload("res://pickup/coletavel.tscn")
 var health: float:
 	set(value):
 		health = value
 		if health<=0:
+			drop_item()
 			queue_free()
 
 var type: Enemy:
@@ -29,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	knockback_update(delta)
 	 
 func check_dist_rendering(delta):
-	var dist_rendering = (player.position - position).length()
+	dist_rendering = (player.position - position).length()
 	#otimizacao
 	# se o inimigo esta a uma distancia maior que 600px, despawna
 	if dist_rendering >= 600: queue_free()
@@ -64,4 +67,16 @@ func take_damage(amount):
 	# chama o popup do dano
 	damage_pop_up(amount)
 	health -= amount
+	
+func drop_item():
+	if type.drops.size() == 0:
+		return
+	var item = type.drops.pick_random()
+	var item_to_drop = drop.instantiate()
+	
+	item_to_drop.type = item
+	item_to_drop.position = position
+	item_to_drop.player = player
+	
+	get_tree().current_scene.call_deferred("add_child", item_to_drop)
 	

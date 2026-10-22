@@ -6,6 +6,7 @@ var health : float = 100:
 	set(value):
 		health = value
 		%Health.value = value
+
 var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance : float = INF
 		
@@ -19,6 +20,7 @@ var level : int = 1:
 	set(value):
 		level = value
 		%Level.text = "Lv " + str(value)
+		%Options.show_option()
 		
 
 

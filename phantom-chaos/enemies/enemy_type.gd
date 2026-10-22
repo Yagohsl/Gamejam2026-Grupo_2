@@ -7,3 +7,5 @@ class_name Enemy
 @export var hframes : int
 @export var vframes : int
 @export var damage: float
+
+@export var drops : Array[Pickups]

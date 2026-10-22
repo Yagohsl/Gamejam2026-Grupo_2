@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://c40qn11oiy6oo" path="res://assets/enemies/fantasminha.png" id="2_88whb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_88whb"]
-radius = 22.0
+radius = 19.0
 
 [node name="Inimigo" type="CharacterBody2D" unique_id=72571221 groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_i66cy")
+speed = 98.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234789522]
 position = Vector2(-4.7683716e-07, 4.7683716e-07)

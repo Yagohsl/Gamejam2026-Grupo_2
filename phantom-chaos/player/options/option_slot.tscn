@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dlmsu3n7pthr2"]
+
+[ext_resource type="Script" uid="uid://crtikmrqnotwo" path="res://player/options/option_slot.gd" id="1_hbrcv"]
+
+[sub_resource type="Gradient" id="Gradient_o6og3"]
+colors = PackedColorArray(0, 0.8901961, 0, 1, 0.3254902, 1, 0.5411765, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_720jb"]
+gradient = SubResource("Gradient_o6og3")
+
+[sub_resource type="Gradient" id="Gradient_2qirm"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.23596987, 0.08093964, 0.021705873, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_657r7"]
+gradient = SubResource("Gradient_2qirm")
+
+[node name="OptionSlot" type="TextureButton" unique_id=1186754991]
+custom_minimum_size = Vector2(315, 0)
+offset_right = 492.0
+offset_bottom = 64.0
+mouse_filter = 1
+texture_normal = SubResource("GradientTexture2D_720jb")
+script = ExtResource("1_hbrcv")
+
+[node name="Label" type="Label" parent="." unique_id=1469708092]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 9.0
+offset_right = 140.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 0.7254902, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Lv 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descricao" type="Label" parent="." unique_id=838659963]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 10.0
+offset_right = 466.0
+offset_bottom = 57.0
+text = "testezin de cria"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1258097735]
+show_behind_parent = true
+layout_mode = 0
+offset_top = -1.0
+offset_right = 493.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_657r7")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
