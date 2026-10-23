@@ -37,7 +37,18 @@ func _physics_process(delta: float) -> void:
 	# movimentacao 
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
 	move_and_collide(velocity * delta)
+	
+	if velocity.length() > 0:
+		
+		if velocity.x < 0:
+			sprite.flip_h = true
+		elif velocity.x > 0:
+			sprite.flip_h = false
+		anim.play("move")
+	else:
+		anim.play("idle")
 	check_XP()
+	print(velocity.length())
 	#impede velocidade dobrada na diagonal
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -71,3 +82,9 @@ func check_XP():
 func _on_magnet_area_entered(area: Area2D) -> void:
 	if area.has_method("follow"):
 		area.follow(self)
+
+func _set_facing_direction(facing_left: bool) -> void:
+	sprite.flip_h = facing_left
+	
+
+	

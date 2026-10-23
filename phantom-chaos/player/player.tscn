@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dng5r6bjym14s" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://bkjiwi8qmwwf6" path="res://player/slot.tscn" id="2_rkbax"]
-[ext_resource type="Resource" uid="uid://bfvql2836gby3" path="res://player/resources/projetil.tres" id="3_g1dw6"]
+[ext_resource type="Resource" uid="uid://bfvql2836gby3" path="res://player/armas/resources/projetil.tres" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://1uctfsd3ua0k" path="res://player/options.gd" id="4_yw30f"]
+[ext_resource type="Texture2D" uid="uid://xneyu10dgkwo" path="res://assets/characters/MC1-Sheet_R_X100.png" id="5_qjkh3"]
 
 [sub_resource type="Gradient" id="Gradient_g1dw6"]
 offsets = PackedFloat32Array(1)
@@ -20,17 +21,70 @@ colors = PackedColorArray(4.933402e-07, 0, 0.3007131, 1, 0.4487393, 0.99999994, 
 gradient = SubResource("Gradient_qjkh3")
 height = 20
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oul6g"]
-size = Vector2(32, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6k8r"]
+radius = 16.5
+height = 66.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(29, 30)
+[sub_resource type="Animation" id="Animation_qjkh3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
-size = Vector2(30, 30)
+[sub_resource type="Animation" id="Animation_g6k8r"]
+resource_name = "idle"
+length = 5.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0666666, 2.2, 2.3333333, 2.4666667, 2.6000001, 2.7333333, 2.8666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [21, 17, 18, 19, 20, 19, 18, 21]
+}
+
+[sub_resource type="Animation" id="Animation_boad6"]
+resource_name = "move"
+length = 1.4666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5, 0.6666667, 0.8333333, 1, 1.1666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rgyib"]
+_data = {
+&"RESET": SubResource("Animation_qjkh3"),
+&"idle": SubResource("Animation_g6k8r"),
+&"move": SubResource("Animation_boad6")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_boad6"]
+radius = 17.0
+height = 66.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1dw6"]
-radius = 50.01
+radius = 60.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1147411066]
 script = ExtResource("1_onrkg")
@@ -84,13 +138,18 @@ script = ExtResource("4_yw30f")
 weapons = NodePath("../Armas")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015191856]
-texture = SubResource("PlaceholderTexture2D_oul6g")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_qjkh3")
+hframes = 8
+vframes = 4
+frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1725172136]
 position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_hqtel")
+shape = SubResource("CapsuleShape2D_g6k8r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=913077993]
+libraries/ = SubResource("AnimationLibrary_rgyib")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1701630665]
 
@@ -100,15 +159,16 @@ collision_mask = 2
 
 [node name="CollisionHitbox" type="CollisionShape2D" parent="SelfDamage" unique_id=1841567754]
 unique_name_in_owner = true
-shape = SubResource("RectangleShape2D_oul6g")
+shape = SubResource("CapsuleShape2D_boad6")
 
 [node name="Health" type="ProgressBar" parent="." unique_id=378219711]
 unique_name_in_owner = true
 offset_left = -47.0
-offset_top = -62.0
+offset_top = -49.0
 offset_right = 48.0
 offset_bottom = -35.0
 value = 100.0
+show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1950215921]
 autostart = true
