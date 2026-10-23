@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddfrtfn44ye1h"]
 
-[ext_resource type="Script" uid="uid://yd0yfih2ty08" path="res://player/projetil.gd" id="1_4dvx7"]
+[ext_resource type="Script" uid="uid://yd0yfih2ty08" path="res://player/armas/projetil.gd" id="1_4dvx7"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xvcbn"]
 size = Vector2(10, 10)

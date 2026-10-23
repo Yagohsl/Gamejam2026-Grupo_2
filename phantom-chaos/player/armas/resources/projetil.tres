@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="SingleShot" format=3 uid="uid://bfvql2836gby3"]
+
+[ext_resource type="PackedScene" uid="uid://ddfrtfn44ye1h" path="res://player/armas/projetil.tscn" id="1_jl5jv"]
+[ext_resource type="Script" uid="uid://clkxs8pccp5fp" path="res://player/armas/SingleShot.gd" id="2_6bol1"]
+[ext_resource type="Script" uid="uid://saxbdfpmpno1" path="res://upgrade/Upgrade.gd" id="3_6bol1"]
+[ext_resource type="Script" uid="uid://cwx044aewg434" path="res://upgrade/UpgradeProjectile.gd" id="4_uebf4"]
+
+[sub_resource type="Gradient" id="Gradient_jl5jv"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.9019608, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6bol1"]
+gradient = SubResource("Gradient_jl5jv")
+
+[sub_resource type="Resource" id="Resource_wwlxk"]
+script = ExtResource("4_uebf4")
+damage = 1.0
+description = "+1 Dano"
+metadata/_custom_type_script = "uid://cwx044aewg434"
+
+[sub_resource type="Resource" id="Resource_ktcyo"]
+script = ExtResource("4_uebf4")
+cooldown = -0.2
+description = "-0.2s Cooldown"
+metadata/_custom_type_script = "uid://cwx044aewg434"
+
+[sub_resource type="Resource" id="Resource_sgf77"]
+script = ExtResource("4_uebf4")
+speed = 200.0
+description = "+200 Velocidade"
+metadata/_custom_type_script = "uid://cwx044aewg434"
+
+[sub_resource type="Resource" id="Resource_injh3"]
+script = ExtResource("4_uebf4")
+damage = 2.0
+description = "+2 Dano"
+metadata/_custom_type_script = "uid://cwx044aewg434"
+
+[sub_resource type="Resource" id="Resource_4bi5o"]
+script = ExtResource("4_uebf4")
+cooldown = -0.1
+description = "-0.1s Cooldown"
+metadata/_custom_type_script = "uid://cwx044aewg434"
+
+[resource]
+script = ExtResource("2_6bol1")
+title = "Projetil"
+damage = 1
+texture = SubResource("GradientTexture2D_6bol1")
+cooldown = 1.0
+speed = 400.0
+upgrades = Array[ExtResource("3_6bol1")]([SubResource("Resource_wwlxk"), SubResource("Resource_ktcyo"), SubResource("Resource_sgf77"), SubResource("Resource_injh3"), SubResource("Resource_4bi5o")])
+metadata/_custom_type_script = "uid://clkxs8pccp5fp"
