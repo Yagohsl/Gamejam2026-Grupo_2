@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="Whip" format=3 uid="uid://dvskdcvrosusp"]
+
+[ext_resource type="PackedScene" uid="uid://ddfrtfn44ye1h" path="res://player/armas/projetil.tscn" id="1_d5g1n"]
+[ext_resource type="PackedScene" uid="uid://el1n88cyyumx" path="res://player/armas/chicote_ataque.tscn" id="1_whip_scene"]
+[ext_resource type="Script" uid="uid://dhbldbx2qlwqm" path="res://player/armas/Whip.gd" id="2_whip_script"]
+[ext_resource type="Script" uid="uid://saxbdfpmpno1" path="res://upgrade/Upgrade.gd" id="3_upgrade_base"]
+[ext_resource type="Script" uid="uid://6kd6cmrekljc" path="res://upgrade/UpgradeWhip.gd" id="4_whip_upgrade"]
+
+[sub_resource type="Gradient" id="Gradient_whip"]
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(0.85, 0.2, 0.1, 1, 1, 0.65, 0.1, 1, 1, 0.95, 0.6, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_whip"]
+gradient = SubResource("Gradient_whip")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Resource" id="Resource_upg1"]
+script = ExtResource("4_whip_upgrade")
+damage = 1.0
+description = "+1 Dano "
+
+[sub_resource type="Resource" id="Resource_upg2"]
+script = ExtResource("4_whip_upgrade")
+extra_attacks = 1
+damage = 1.0
+description = "+1 Ataque Extra "
+
+[sub_resource type="Resource" id="Resource_upg3"]
+script = ExtResource("4_whip_upgrade")
+cooldown = -0.2
+description = "-0.2s Recarga "
+
+[sub_resource type="Resource" id="Resource_upg4"]
+script = ExtResource("4_whip_upgrade")
+damage = 2.0
+description = "+2 Dano"
+
+[sub_resource type="Resource" id="Resource_upg5"]
+script = ExtResource("4_whip_upgrade")
+area_scale = 0.2
+description = "+20% Área de ataque"
+
+[resource]
+script = ExtResource("2_whip_script")
+title = "Chicote"
+damage = 3
+texture = SubResource("GradientTexture2D_whip")
+cooldown = 2.0
+upgrades = Array[ExtResource("3_upgrade_base")]([SubResource("Resource_upg1"), SubResource("Resource_upg2"), SubResource("Resource_upg3"), SubResource("Resource_upg4"), SubResource("Resource_upg5")])

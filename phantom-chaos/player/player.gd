@@ -24,6 +24,8 @@ var level : int = 1:
 		
 
 
+var facing_direction: Vector2 = Vector2.RIGHT
+
 @export var speed: int = 300
 @onready var sprite = $Sprite2D
 @onready var anim = $AnimationPlayer
@@ -39,11 +41,12 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity * delta)
 	
 	if velocity.length() > 0:
-		
 		if velocity.x < 0:
 			sprite.flip_h = true
+			facing_direction = Vector2.LEFT
 		elif velocity.x > 0:
 			sprite.flip_h = false
+			facing_direction = Vector2.RIGHT
 		anim.play("move")
 	else:
 		anim.play("idle")

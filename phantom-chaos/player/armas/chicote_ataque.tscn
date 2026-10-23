@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://el1n88cyyumx"]
+
+[ext_resource type="Script" uid="uid://dex7si0b8mhyr" path="res://player/armas/chicote_ataque.gd" id="1_whip_atk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whip"]
+size = Vector2(140, 36)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_r12f1"]
+
+[node name="ChicoteAtaque" type="Area2D" unique_id=2028161802]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_whip_atk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1734677480]
+position = Vector2(75, 0)
+shape = SubResource("RectangleShape2D_whip")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1189035714]
+position = Vector2(75, 9.536743e-07)
+scale = Vector2(140.5, 31.5)
+texture = SubResource("PlaceholderTexture2D_r12f1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
