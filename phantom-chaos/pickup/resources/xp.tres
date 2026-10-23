@@ -1,13 +1,14 @@
 [gd_resource type="Resource" script_class="Experience" format=3 uid="uid://dwn5cjo0ch27h"]
 
 [ext_resource type="Script" uid="uid://xpv0y7t0nwpr" path="res://pickup/Experience.gd" id="1_8p1mc"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mef63"]
-size = Vector2(15, 30)
+[ext_resource type="Texture2D" uid="uid://cupsmuycktskm" path="res://assets/objects/xp_sheet100.png" id="1_mef63"]
 
 [resource]
 script = ExtResource("1_8p1mc")
 XP = 1.0
 title = "xp"
-icon = SubResource("PlaceholderTexture2D_mef63")
+icon = ExtResource("1_mef63")
+hframes = 4
+vframes = 2
+scale_modifier = Vector2(2, 2)
 metadata/_custom_type_script = "uid://xpv0y7t0nwpr"
