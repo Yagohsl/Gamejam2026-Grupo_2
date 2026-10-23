@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bujdgng3jqria"]
+
+[ext_resource type="Script" uid="uid://d12nw6c1a0y4l" path="res://screens/pause.gd" id="1_kfbtg"]
+
+[node name="Pause" type="CanvasLayer" unique_id=1388903860]
+process_mode = 3
+script = ExtResource("1_kfbtg")
+
+[node name="Panel" type="Panel" parent="." unique_id=672192078]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -87.0
+offset_right = 112.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1671975141]
+layout_mode = 0
+offset_right = 225.5
+offset_bottom = 174.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1359815415]
+layout_mode = 2
+text = "Jogo Pausado
+
+"
+horizontal_alignment = 1
+
+[node name="BtnContinuar" type="Button" parent="Panel/VBoxContainer" unique_id=1687945912]
+layout_mode = 2
+text = "Continuar"
+
+[node name="BtnSair" type="Button" parent="Panel/VBoxContainer" unique_id=492309121]
+layout_mode = 2
+text = "Sair
+"
+
+[connection signal="pressed" from="Panel/VBoxContainer/BtnContinuar" to="." method="_on_btn_continuar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BtnSair" to="." method="_on_btn_sair_pressed"]

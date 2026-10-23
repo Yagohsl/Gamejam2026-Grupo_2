@@ -1,13 +1,79 @@
 [gd_scene format=3 uid="uid://b5cwefql2o4y6"]
 
+[ext_resource type="Script" uid="uid://p0jb16gitlem" path="res://screens/arena.gd" id="1_75ymw"]
 [ext_resource type="PackedScene" uid="uid://ceinbu7hufm50" path="res://utils/spawner.tscn" id="2_75ymw"]
 [ext_resource type="PackedScene" uid="uid://bagsjkmj4eeu2" path="res://player/player.tscn" id="2_vyub2"]
+[ext_resource type="PackedScene" uid="uid://bujdgng3jqria" path="res://screens/pause.tscn" id="4_ojoye"]
 
-[node name="Arena" type="Node2D" unique_id=996573635]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vyub2"]
 
-[node name="Player" parent="." unique_id=1147411066 instance=ExtResource("2_vyub2")]
+[sub_resource type="Animation" id="Animation_ojoye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Controles:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xbgq7"]
+resource_name = "controles"
+length = 4.233333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Controles:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.73333335, 1.2, 1.8619763, 2.3286428, 3.0000002, 3.5333333, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fhjmb"]
+_data = {
+&"RESET": SubResource("Animation_ojoye"),
+&"controles": SubResource("Animation_xbgq7")
+}
+
+[node name="Arena" type="Node2D" unique_id=996573635 node_paths=PackedStringArray("player")]
+script = ExtResource("1_75ymw")
+player = NodePath("Player")
+
+[node name="Player" parent="." unique_id=1147411066 groups=["player"] instance=ExtResource("2_vyub2")]
 position = Vector2(182, 141)
+
+[node name="Controles" type="Label" parent="Player" unique_id=2096907227]
+offset_left = -40.0
+offset_top = -124.0
+offset_right = 41.0
+offset_bottom = -49.0
+text = "W
+A              D
+S"
+horizontal_alignment = 1
 
 [node name="Spawner" parent="." unique_id=438922561 node_paths=PackedStringArray("player") instance=ExtResource("2_75ymw")]
 position = Vector2(76, -283)
 player = NodePath("../Player")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=322763625]
+offset_left = 325.0
+offset_top = 213.0
+offset_right = 365.0
+offset_bottom = 232.0
+texture = SubResource("PlaceholderTexture2D_vyub2")
+
+[node name="Pause" parent="." unique_id=1388903860 node_paths=PackedStringArray("upgrade_box") instance=ExtResource("4_ojoye")]
+upgrade_box = NodePath("../Player")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1901138017]
+libraries/ = SubResource("AnimationLibrary_fhjmb")
