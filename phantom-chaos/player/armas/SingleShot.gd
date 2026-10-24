@@ -12,6 +12,7 @@ func shoot(source, target, scene_tree):
 	projectile.position = source.position
 	projectile.damage = damage
 	projectile.speed = speed
+	projectile.source = source
 	projectile.direction = (target.position - source.position).normalized()
 	
 	scene_tree.current_scene.add_child(projectile)

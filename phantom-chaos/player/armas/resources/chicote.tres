@@ -42,8 +42,8 @@ description = "+20% Área de ataque"
 
 [resource]
 script = ExtResource("2_whip_script")
-title = "Chicote"
-damage = 3
-texture = SubResource("GradientTexture2D_whip")
+damage = 3.0
 cooldown = 2.0
 upgrades = Array[ExtResource("3_upgrade_base")]([SubResource("Resource_upg1"), SubResource("Resource_upg2"), SubResource("Resource_upg3"), SubResource("Resource_upg4"), SubResource("Resource_upg5")])
+title = "Chicote"
+texture = SubResource("GradientTexture2D_whip")
