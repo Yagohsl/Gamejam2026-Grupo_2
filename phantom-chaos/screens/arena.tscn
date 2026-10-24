@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ceinbu7hufm50" path="res://utils/spawner.tscn" id="2_75ymw"]
 [ext_resource type="PackedScene" uid="uid://bagsjkmj4eeu2" path="res://player/player.tscn" id="2_vyub2"]
 [ext_resource type="PackedScene" uid="uid://bujdgng3jqria" path="res://screens/pause.tscn" id="4_ojoye"]
+[ext_resource type="PackedScene" uid="uid://b7c0lh1625bre" path="res://screens/game_over.tscn" id="5_xbgq7"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vyub2"]
 
@@ -48,8 +49,9 @@ _data = {
 script = ExtResource("1_75ymw")
 player = NodePath("Player")
 
-[node name="Player" parent="." unique_id=1147411066 groups=["player"] instance=ExtResource("2_vyub2")]
+[node name="Player" parent="." unique_id=1147411066 node_paths=PackedStringArray("game_over") groups=["player"] instance=ExtResource("2_vyub2")]
 position = Vector2(182, 141)
+game_over = NodePath("../GameOver")
 
 [node name="Controles" type="Label" parent="Player" unique_id=2096907227]
 offset_left = -40.0
@@ -72,8 +74,12 @@ offset_right = 365.0
 offset_bottom = 232.0
 texture = SubResource("PlaceholderTexture2D_vyub2")
 
-[node name="Pause" parent="." unique_id=1388903860 node_paths=PackedStringArray("upgrade_box") instance=ExtResource("4_ojoye")]
+[node name="Pause" parent="." unique_id=1388903860 node_paths=PackedStringArray("upgrade_box", "game_over") instance=ExtResource("4_ojoye")]
 upgrade_box = NodePath("../Player")
+game_over = NodePath("../GameOver")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1901138017]
 libraries/ = SubResource("AnimationLibrary_fhjmb")
+
+[node name="GameOver" parent="." unique_id=1456307164 instance=ExtResource("5_xbgq7")]
+visible = false

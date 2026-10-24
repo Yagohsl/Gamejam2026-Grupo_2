@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b7c0lh1625bre"]
+
+[ext_resource type="FontFile" uid="uid://bnpnrnyfu6xtq" path="res://assets/font/Crimson Horror One.otf" id="1_11mxd"]
+[ext_resource type="Script" uid="uid://dakqf6aayuoho" path="res://screens/game_over.gd" id="1_skulm"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=1456307164]
+process_mode = 3
+script = ExtResource("1_skulm")
+
+[node name="Panel" type="Panel" parent="." unique_id=655877071]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=508116429]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -101.25
+offset_right = 105.5
+offset_bottom = 101.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1318276746]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_11mxd")
+theme_override_font_sizes/font_size = 42
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="BtnContinuar" type="Button" parent="VBoxContainer" unique_id=1958033451]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_11mxd")
+theme_override_font_sizes/font_size = 30
+text = "Tentar Novamente"
+flat = true
+
+[node name="BtnSair" type="Button" parent="VBoxContainer" unique_id=179546303]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_11mxd")
+theme_override_font_sizes/font_size = 30
+text = "Sair
+"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/BtnContinuar" to="." method="_on_btn_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnSair" to="." method="_on_btn_sair_pressed"]
