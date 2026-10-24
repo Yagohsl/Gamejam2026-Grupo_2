@@ -4,9 +4,11 @@ extends TextureButton
 @export var item : Item:
 	set(value):
 		item = value
-		
-		texture_normal = value.texture
-		value.texture.visible = false
+		if value is PassiveItem:
+			$TextureRect.texture = null 
+		else:
+			$TextureRect.texture = value.texture 
+			
 		$Label.text = str(item.title)+ " " + str(item.level + 1)
 		$Descricao.text = value.upgrades[value.level -1].description
 

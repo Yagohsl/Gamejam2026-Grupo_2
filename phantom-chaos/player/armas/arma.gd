@@ -4,10 +4,14 @@ class_name Weapon
 @export var damage : float
 @export var cooldown : float
 @export var speed : float
+@export var scale_modifier : Vector2 = Vector2(1, 1)
 
 @export var projectile_node : PackedScene = preload("res://player/armas/projetil.tscn")
 
 @export var upgrades : Array[Upgrade]
+
+
+
 func activate(_source, _target, _scene_tree):
 	pass
 

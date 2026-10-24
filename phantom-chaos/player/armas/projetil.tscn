@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://ddfrtfn44ye1h"]
 
 [ext_resource type="Script" uid="uid://yd0yfih2ty08" path="res://player/armas/projetil.gd" id="1_4dvx7"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xvcbn"]
-size = Vector2(10, 10)
+[ext_resource type="Texture2D" uid="uid://ot0ud0oaoqv0" path="res://assets/itens/regua01_x100.png" id="2_uxavd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mdh8b"]
 resource_local_to_scene = true
+radius = 13.038404
 
 [node name="Projetil" type="Area2D" unique_id=754887887]
 collision_layer = 0
@@ -14,7 +13,8 @@ collision_mask = 2
 script = ExtResource("1_4dvx7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1292301640]
-texture = SubResource("PlaceholderTexture2D_xvcbn")
+rotation = 1.5707964
+texture = ExtResource("2_uxavd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617182061]
 shape = SubResource("CircleShape2D_mdh8b")

@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://bek52nbhxq2s0"]
 
 [ext_resource type="Script" uid="uid://c68jpc763uh05" path="res://player/armas/SplashAttack.gd" id="1_splash"]
+[ext_resource type="Texture2D" uid="uid://py4jn21q8eqx" path="res://assets/itens/quimicoVerde01_X400.png" id="2_djuqo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_splash"]
 resource_local_to_scene = true
 radius = 60.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_splash"]
-size = Vector2(120, 120)
 
 [node name="SplashAttack" type="Area2D" unique_id=100000001]
 z_index = -1
@@ -20,6 +18,12 @@ shape = SubResource("CircleShape2D_splash")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=100000003]
 z_index = -1
-texture = SubResource("PlaceholderTexture2D_splash")
+texture_repeat = 2
+position = Vector2(-4.125, -56.874992)
+scale = Vector2(2.0976563, 3.2148438)
+texture = ExtResource("2_djuqo")
+hframes = 5
+vframes = 2
+frame = 9
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

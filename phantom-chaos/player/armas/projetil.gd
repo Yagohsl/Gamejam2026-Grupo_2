@@ -7,6 +7,9 @@ var damage : float = 1
 var knockback : float = 90
 var source 
 
+func _ready():
+	rotation = direction.angle()
+	
 func _physics_process(delta: float) -> void:
 	#projetil se move em velocidade constante
 	position += direction * speed * delta

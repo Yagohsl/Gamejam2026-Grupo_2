@@ -3,14 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ddfrtfn44ye1h" path="res://player/armas/projetil.tscn" id="1_7gin2"]
 [ext_resource type="Script" uid="uid://clkxs8pccp5fp" path="res://player/armas/SingleShot.gd" id="2_uisu6"]
 [ext_resource type="Script" uid="uid://saxbdfpmpno1" path="res://upgrade/Upgrade.gd" id="3_noccj"]
+[ext_resource type="Texture2D" uid="uid://ot0ud0oaoqv0" path="res://assets/itens/regua01_x100.png" id="3_uisu6"]
 [ext_resource type="Script" uid="uid://cwx044aewg434" path="res://upgrade/UpgradeProjectile.gd" id="4_2sqgy"]
-
-[sub_resource type="Gradient" id="Gradient_jl5jv"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0.9019608, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6bol1"]
-gradient = SubResource("Gradient_jl5jv")
 
 [sub_resource type="Resource" id="Resource_wwlxk"]
 script = ExtResource("4_2sqgy")
@@ -49,5 +43,5 @@ cooldown = 1.0
 speed = 400.0
 upgrades = Array[ExtResource("3_noccj")]([SubResource("Resource_wwlxk"), SubResource("Resource_ktcyo"), SubResource("Resource_sgf77"), SubResource("Resource_injh3"), SubResource("Resource_4bi5o")])
 title = "Projetil"
-texture = SubResource("GradientTexture2D_6bol1")
+texture = ExtResource("3_uisu6")
 metadata/_custom_type_script = "uid://clkxs8pccp5fp"
