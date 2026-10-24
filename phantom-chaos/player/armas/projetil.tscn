@@ -5,8 +5,8 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xvcbn"]
 size = Vector2(10, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e138m"]
-size = Vector2(10, 10)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mdh8b"]
+resource_local_to_scene = true
 
 [node name="Projetil" type="Area2D" unique_id=754887887]
 collision_layer = 0
@@ -17,7 +17,7 @@ script = ExtResource("1_4dvx7")
 texture = SubResource("PlaceholderTexture2D_xvcbn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617182061]
-shape = SubResource("RectangleShape2D_e138m")
+shape = SubResource("CircleShape2D_mdh8b")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1397553980]
 

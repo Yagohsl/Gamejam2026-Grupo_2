@@ -6,7 +6,8 @@ extends TextureButton
 		item = value
 		
 		texture_normal = value.texture
-		$Label.text = "Lv " + str(item.level + 1)
+		value.texture.visible = false
+		$Label.text = str(item.title)+ " " + str(item.level + 1)
 		$Descricao.text = value.upgrades[value.level -1].description
 
 func _on_gui_input(event: InputEvent) -> void:

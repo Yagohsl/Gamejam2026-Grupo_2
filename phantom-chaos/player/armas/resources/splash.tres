@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Splash" format=3 uid="uid://bu1nbydwoahsy"]
+
+[ext_resource type="PackedScene" uid="uid://ddfrtfn44ye1h" path="res://player/armas/projetil.tscn" id="1_gehnx"]
+[ext_resource type="Script" uid="uid://saxbdfpmpno1" path="res://upgrade/Upgrade.gd" id="1_upgrade"]
+[ext_resource type="Script" uid="uid://qqcifdegaohr" path="res://player/armas/Splash.gd" id="2_splash"]
+[ext_resource type="PackedScene" uid="uid://bek52nbhxq2s0" path="res://player/armas/splash_attack.tscn" id="3_qwcqf"]
+[ext_resource type="Script" uid="uid://b5f5u1e4k7p08" path="res://upgrade/UpgradeSplash.gd" id="3_splashupgrade"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_httxq"]
+size = Vector2(64, 64)
+
+[sub_resource type="Resource" id="Resource_upg1"]
+script = ExtResource("1_upgrade")
+damage = 1.0
+description = "+1 Dano"
+
+[sub_resource type="Resource" id="Resource_upg2"]
+script = ExtResource("3_splashupgrade")
+area = 0.25
+description = "+25% Raio do Splash"
+
+[sub_resource type="Resource" id="Resource_upg3"]
+script = ExtResource("1_upgrade")
+cooldown = -0.2
+description = "-0.2s Recarga"
+
+[sub_resource type="Resource" id="Resource_upg4"]
+script = ExtResource("1_upgrade")
+damage = 2.0
+description = "+2 Dano"
+
+[sub_resource type="Resource" id="Resource_upg5"]
+script = ExtResource("3_splashupgrade")
+area = 0.3
+description = "+30% Raio do Splash"
+
+[resource]
+script = ExtResource("2_splash")
+damage = 3.0
+cooldown = 2.0
+upgrades = Array[ExtResource("1_upgrade")]([SubResource("Resource_upg1"), SubResource("Resource_upg2"), SubResource("Resource_upg3"), SubResource("Resource_upg4"), SubResource("Resource_upg5")])
+title = "Splash"
+texture = SubResource("PlaceholderTexture2D_httxq")
+metadata/_custom_type_script = "uid://dyqfa0erjl5op"

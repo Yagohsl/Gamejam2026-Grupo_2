@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dng5r6bjym14s" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://bkjiwi8qmwwf6" path="res://player/slot.tscn" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://ctwqdi6cxjaq5" path="res://player/passive_slot.tscn" id="3_qjkh3"]
-[ext_resource type="Resource" uid="uid://dvskdcvrosusp" path="res://player/armas/resources/chicote.tres" id="3_yllr7"]
+[ext_resource type="Resource" uid="uid://bu1nbydwoahsy" path="res://player/armas/resources/splash.tres" id="3_yllr7"]
 [ext_resource type="Script" uid="uid://1uctfsd3ua0k" path="res://player/options.gd" id="4_yw30f"]
 [ext_resource type="Texture2D" uid="uid://xneyu10dgkwo" path="res://assets/characters/MC1-Sheet_R_X100.png" id="5_qjkh3"]
 [ext_resource type="Resource" uid="uid://myki1cqj068k" path="res://itens/resources/ima.tres" id="5_rgyib"]

@@ -2,12 +2,6 @@
 
 [ext_resource type="Script" uid="uid://crtikmrqnotwo" path="res://player/options/option_slot.gd" id="1_hbrcv"]
 
-[sub_resource type="Gradient" id="Gradient_o6og3"]
-colors = PackedColorArray(0, 0.8901961, 0, 1, 0.3254902, 1, 0.5411765, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_720jb"]
-gradient = SubResource("Gradient_o6og3")
-
 [sub_resource type="Gradient" id="Gradient_2qirm"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0.23596987, 0.08093964, 0.021705873, 1)
@@ -29,7 +23,6 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-texture_normal = SubResource("GradientTexture2D_720jb")
 script = ExtResource("1_hbrcv")
 
 [node name="Label" type="Label" parent="." unique_id=1469708092]
@@ -39,7 +32,7 @@ offset_top = 9.0
 offset_right = 140.0
 offset_bottom = 51.0
 theme_override_colors/font_color = Color(1, 0.7254902, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 text = "Lv 2"
 horizontal_alignment = 1
 vertical_alignment = 1
