@@ -94,8 +94,9 @@ height = 58.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1dw6"]
 radius = 60.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1147411066]
+[node name="Player" type="CharacterBody2D" unique_id=1147411066 node_paths=PackedStringArray("slot")]
 script = ExtResource("1_onrkg")
+slot = NodePath("UI/Armas/Slot")
 speed = 150
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1352562187]
@@ -172,10 +173,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_yw30f")
@@ -197,6 +194,7 @@ shape = SubResource("CapsuleShape2D_g6k8r")
 libraries/ = SubResource("AnimationLibrary_rgyib")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1701630665]
+zoom = Vector2(0.8, 0.8)
 
 [node name="SelfDamage" type="Area2D" parent="." unique_id=2006525074]
 collision_layer = 0
