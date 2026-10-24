@@ -1,14 +1,27 @@
 extends CharacterBody2D
+@export var game_over : CanvasLayer
+var max_health: float = 100:
+	set(value):
+		max_health = value
+		%Health.max_value = value
+		
+# stats
+var recovery : float = 0
+var might : float = 1
+var area : float = 10
+var growth : float = 1
+var magnet : float = 0:
+	set(value):
+		magnet = value
+		%Magnet.shape.radius = 60 + value
 
-@export var max_health: float = 100
 var health : float = 100:
 	#atualiza a barra de vida
 	set(value):
-		health = value
+		health = max(value,0)
 		%Health.value = value
-
 var nearest_enemy : CharacterBody2D
-var nearest_enemy_distance : float = INF
+var nearest_enemy_distance : float = 150 + area
 		
 var XP : int = 0:
 	set(value):
@@ -30,11 +43,14 @@ var facing_direction: Vector2 = Vector2.RIGHT
 @onready var sprite = $Sprite2D
 @onready var anim = $AnimationPlayer
 
+
+
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(nearest_enemy):
 		nearest_enemy_distance = nearest_enemy.dist_rendering
 	else:
-		nearest_enemy_distance = INF
+		nearest_enemy_distance = 150 + area
+		nearest_enemy = null
 		
 	# movimentacao 
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
@@ -51,7 +67,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		anim.play("idle")
 	check_XP()
-	print(velocity.length())
+	health += recovery * delta
+	
 	#impede velocidade dobrada na diagonal
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -65,15 +82,16 @@ func _on_self_damage_body_entered(body: Node2D) -> void:
 #funcao pra reduzir a vida
 func take_damage(amount):
 	health -= amount
-	print(amount)
-
+	if health <=0:
+		game_over.ativar_game_over()
+		
 func _on_timer_timeout() -> void:
 	%CollisionHitbox.set_deferred("disabled", true)
 	%CollisionHitbox.set_deferred("disabled", false)
 
 func gain_XP(amount):
-	XP += amount
-	total_xp += amount
+	XP += amount * growth
+	total_xp += amount * growth
 
 func check_XP():
 	if XP > %XP.max_value:

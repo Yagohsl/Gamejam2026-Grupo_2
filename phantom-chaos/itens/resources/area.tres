@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://dndwu4dwlemci"]
+
+[ext_resource type="Script" uid="uid://bb4xpupqo5cep" path="res://itens/ItemPassivo.gd" id="1_p0l0b"]
+[ext_resource type="Script" uid="uid://d21whgg3towkh" path="res://player/Stats.gd" id="2_yr2m0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gsix6"]
+size = Vector2(64, 64)
+
+[sub_resource type="Resource" id="Resource_i6ky0"]
+script = ExtResource("2_yr2m0")
+description = "+25 Alcance do Ataque"
+area = 25.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[sub_resource type="Resource" id="Resource_5tk04"]
+script = ExtResource("2_yr2m0")
+description = "+35 Alcande do Ataque"
+area = 35.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[sub_resource type="Resource" id="Resource_fxtow"]
+script = ExtResource("2_yr2m0")
+description = "+45 Alcance do Ataque"
+area = 45.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[resource]
+script = ExtResource("1_p0l0b")
+upgrades = Array[ExtResource("2_yr2m0")]([SubResource("Resource_i6ky0"), SubResource("Resource_5tk04"), SubResource("Resource_fxtow")])
+title = "Area"
+texture = SubResource("PlaceholderTexture2D_gsix6")
+metadata/_custom_type_script = "uid://bb4xpupqo5cep"

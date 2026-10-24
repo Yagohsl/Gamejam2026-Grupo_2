@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://v4840yib51dt"]
+
+[ext_resource type="Script" uid="uid://bb4xpupqo5cep" path="res://itens/ItemPassivo.gd" id="1_uspa6"]
+[ext_resource type="Script" uid="uid://d21whgg3towkh" path="res://player/Stats.gd" id="2_rj8ot"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1k2fq"]
+size = Vector2(64, 64)
+
+[sub_resource type="Resource" id="Resource_yfwpr"]
+script = ExtResource("2_rj8ot")
+description = "+15 Velocidade"
+speed = 15.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[sub_resource type="Resource" id="Resource_4wj32"]
+script = ExtResource("2_rj8ot")
+description = "+25 Velocidade"
+speed = 25.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[sub_resource type="Resource" id="Resource_dlo5s"]
+script = ExtResource("2_rj8ot")
+description = "+30 Velocidade"
+speed = 30.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[resource]
+script = ExtResource("1_uspa6")
+upgrades = Array[ExtResource("2_rj8ot")]([SubResource("Resource_yfwpr"), SubResource("Resource_4wj32"), SubResource("Resource_dlo5s")])
+title = "Velocidade"
+texture = SubResource("PlaceholderTexture2D_1k2fq")
+metadata/_custom_type_script = "uid://bb4xpupqo5cep"

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://dqw1r24gib0er"]
+
+[ext_resource type="Script" uid="uid://bb4xpupqo5cep" path="res://itens/ItemPassivo.gd" id="1_mdmue"]
+[ext_resource type="Script" uid="uid://d21whgg3towkh" path="res://player/Stats.gd" id="2_iqnsd"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1lc65"]
+size = Vector2(64, 64)
+
+[sub_resource type="Resource" id="Resource_01lhu"]
+script = ExtResource("2_iqnsd")
+description = "+20% Regeneração"
+recovery = 0.2
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[sub_resource type="Resource" id="Resource_o3cah"]
+script = ExtResource("2_iqnsd")
+description = "+40% Regeneração"
+recovery = 0.4
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[sub_resource type="Resource" id="Resource_tdytq"]
+script = ExtResource("2_iqnsd")
+description = "+60% Regeneração"
+recovery = 0.6
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[resource]
+script = ExtResource("1_mdmue")
+upgrades = Array[ExtResource("2_iqnsd")]([SubResource("Resource_01lhu"), SubResource("Resource_o3cah"), SubResource("Resource_tdytq")])
+title = "Regeneracao"
+texture = SubResource("PlaceholderTexture2D_1lc65")
+metadata/_custom_type_script = "uid://bb4xpupqo5cep"

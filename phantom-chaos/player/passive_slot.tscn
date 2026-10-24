@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ctwqdi6cxjaq5"]
+
+[ext_resource type="Script" uid="uid://cc0qwbh3drkwu" path="res://player/passive_slot.gd" id="1_4e3px"]
+
+[node name="PassiveSlot" type="PanelContainer" unique_id=1875100288]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4e3px")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1414944402]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 3

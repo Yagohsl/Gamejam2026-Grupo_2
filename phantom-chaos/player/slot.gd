@@ -1,15 +1,21 @@
 extends PanelContainer
 
 
-@export var weapon : Weapon:
+@export var item : Weapon:
 	# atualiza a imagem e cooldown da arma
 	set(value):
-		weapon = value
-		$TextureRect.texture = value.texture
-		$Cooldown.wait_time = value.cooldown
+		item = value
+		if is_node_ready() and item:
+			$TextureRect.texture = item.texture
+			$Cooldown.wait_time = item.cooldown 
+
+func _ready() -> void:
+	if item:
+		$TextureRect.texture = item.texture
+		$Cooldown.wait_time = item.cooldown
 
 func _on_cooldown_timeout() -> void:
-	if weapon:
-		$Cooldown.wait_time = weapon.cooldown
+	if item:
+		$Cooldown.wait_time = item.cooldown
 		#ativa a arma quando acaba o cooldown
-		weapon.activate(owner, owner.nearest_enemy, get_tree())
+		item.activate(owner, owner.nearest_enemy, get_tree())

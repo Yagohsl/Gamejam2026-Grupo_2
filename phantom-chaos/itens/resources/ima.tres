@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://myki1cqj068k"]
+
+[ext_resource type="Script" uid="uid://bb4xpupqo5cep" path="res://itens/ItemPassivo.gd" id="1_kxx34"]
+[ext_resource type="Script" uid="uid://d21whgg3towkh" path="res://player/Stats.gd" id="2_lbpr0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_68ekj"]
+size = Vector2(64, 64)
+
+[sub_resource type="Resource" id="Resource_3881p"]
+script = ExtResource("2_lbpr0")
+description = "+15 Raio de Coleta"
+magnet = 15.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[sub_resource type="Resource" id="Resource_wt1fc"]
+script = ExtResource("2_lbpr0")
+description = "+20 Raio de Coleta"
+magnet = 20.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[sub_resource type="Resource" id="Resource_ig2a1"]
+script = ExtResource("2_lbpr0")
+description = "+25 Raio de Coleta"
+magnet = 25.0
+metadata/_custom_type_script = "uid://d21whgg3towkh"
+
+[resource]
+script = ExtResource("1_kxx34")
+upgrades = Array[ExtResource("2_lbpr0")]([SubResource("Resource_3881p"), SubResource("Resource_wt1fc"), SubResource("Resource_ig2a1")])
+title = "Ima"
+texture = SubResource("PlaceholderTexture2D_68ekj")
+metadata/_custom_type_script = "uid://bb4xpupqo5cep"

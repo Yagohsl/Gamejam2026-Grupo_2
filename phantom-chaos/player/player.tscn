@@ -2,9 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dng5r6bjym14s" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://bkjiwi8qmwwf6" path="res://player/slot.tscn" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://ctwqdi6cxjaq5" path="res://player/passive_slot.tscn" id="3_qjkh3"]
+[ext_resource type="Resource" uid="uid://dvskdcvrosusp" path="res://player/armas/resources/chicote.tres" id="3_yllr7"]
 [ext_resource type="Script" uid="uid://1uctfsd3ua0k" path="res://player/options.gd" id="4_yw30f"]
 [ext_resource type="Texture2D" uid="uid://xneyu10dgkwo" path="res://assets/characters/MC1-Sheet_R_X100.png" id="5_qjkh3"]
-[ext_resource type="Resource" uid="uid://dvskdcvrosusp" path="res://player/armas/resources/chicote.tres" id="6_whip"]
+[ext_resource type="Resource" uid="uid://myki1cqj068k" path="res://itens/resources/ima.tres" id="5_rgyib"]
+[ext_resource type="Resource" uid="uid://dndwu4dwlemci" path="res://itens/resources/area.tres" id="6_hg6s5"]
+[ext_resource type="Resource" uid="uid://dcug726apa71u" path="res://itens/resources/dano.tres" id="7_2ieo8"]
+[ext_resource type="Resource" uid="uid://bjoo2wp23fdee" path="res://itens/resources/ganho.tres" id="8_ebec5"]
+[ext_resource type="Resource" uid="uid://dqw1r24gib0er" path="res://itens/resources/regen.tres" id="9_yllr7"]
+[ext_resource type="Resource" uid="uid://dsy1o0n2svafo" path="res://itens/resources/vida_max.tres" id="10_yllr7"]
+[ext_resource type="Resource" uid="uid://v4840yib51dt" path="res://itens/resources/velocidade.tres" id="11_kb6p2"]
 
 [sub_resource type="Gradient" id="Gradient_g1dw6"]
 offsets = PackedFloat32Array(1)
@@ -22,8 +30,8 @@ gradient = SubResource("Gradient_qjkh3")
 height = 20
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6k8r"]
-radius = 16.5
-height = 66.0
+radius = 14.5
+height = 58.0
 
 [sub_resource type="Animation" id="Animation_qjkh3"]
 length = 0.001
@@ -80,8 +88,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_boad6"]
-radius = 17.0
-height = 66.0
+radius = 15.0
+height = 58.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1dw6"]
 radius = 60.0
@@ -93,13 +101,49 @@ speed = 150
 [node name="UI" type="CanvasLayer" parent="." unique_id=1352562187]
 
 [node name="Armas" type="HBoxContainer" parent="UI" unique_id=2139984246]
+offset_left = 12.0
 offset_top = 41.0
-offset_right = 40.0
+offset_right = 52.0
 offset_bottom = 81.0
 
 [node name="Slot" parent="UI/Armas" unique_id=1827761604 instance=ExtResource("2_rkbax")]
 layout_mode = 2
-weapon = ExtResource("6_whip")
+item = ExtResource("3_yllr7")
+
+[node name="ArmasPassivas" type="HBoxContainer" parent="UI" unique_id=895914725]
+visible = false
+offset_left = 56.0
+offset_top = 41.0
+offset_right = 140.0
+offset_bottom = 81.0
+
+[node name="PassiveSlot" parent="UI/ArmasPassivas" unique_id=1875100288 instance=ExtResource("3_qjkh3")]
+layout_mode = 2
+item = ExtResource("5_rgyib")
+
+[node name="PassiveSlot2" parent="UI/ArmasPassivas" unique_id=927338228 instance=ExtResource("3_qjkh3")]
+layout_mode = 2
+item = ExtResource("6_hg6s5")
+
+[node name="PassiveSlot3" parent="UI/ArmasPassivas" unique_id=122146675 instance=ExtResource("3_qjkh3")]
+layout_mode = 2
+item = ExtResource("7_2ieo8")
+
+[node name="PassiveSlot4" parent="UI/ArmasPassivas" unique_id=1576498884 instance=ExtResource("3_qjkh3")]
+layout_mode = 2
+item = ExtResource("8_ebec5")
+
+[node name="PassiveSlot5" parent="UI/ArmasPassivas" unique_id=327216679 instance=ExtResource("3_qjkh3")]
+layout_mode = 2
+item = ExtResource("9_yllr7")
+
+[node name="PassiveSlot6" parent="UI/ArmasPassivas" unique_id=547831395 instance=ExtResource("3_qjkh3")]
+layout_mode = 2
+item = ExtResource("10_yllr7")
+
+[node name="PassiveSlot7" parent="UI/ArmasPassivas" unique_id=2018951489 instance=ExtResource("3_qjkh3")]
+layout_mode = 2
+item = ExtResource("11_kb6p2")
 
 [node name="XP" type="TextureProgressBar" parent="UI" unique_id=1343898381]
 unique_name_in_owner = true
@@ -120,7 +164,7 @@ offset_right = 996.0
 offset_bottom = 55.0
 text = "Lv 1"
 
-[node name="Options" type="VBoxContainer" parent="UI" unique_id=732306699 node_paths=PackedStringArray("weapons")]
+[node name="Options" type="VBoxContainer" parent="UI" unique_id=732306699 node_paths=PackedStringArray("weapons", "passive_items")]
 unique_name_in_owner = true
 process_mode = 3
 anchors_preset = 8
@@ -136,6 +180,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_yw30f")
 weapons = NodePath("../Armas")
+passive_items = NodePath("../ArmasPassivas")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015191856]
 scale = Vector2(1.5, 1.5)
@@ -177,7 +222,9 @@ autostart = true
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet" unique_id=729939212]
+[node name="Magnet" type="CollisionShape2D" parent="Magnet" unique_id=729939212]
+unique_name_in_owner = true
+visible = false
 shape = SubResource("CircleShape2D_g1dw6")
 
 [connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
