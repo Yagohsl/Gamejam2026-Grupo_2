@@ -12,5 +12,6 @@ texture = ExtResource("2_pkoev")
 hframes = 1
 vframes = 4
 damage = 2.0
+speed = 80.0
 drops = Array[ExtResource("1_nj6l8")]([ExtResource("2_g48vw")])
 metadata/_custom_type_script = "uid://cqpabsa3xhq26"

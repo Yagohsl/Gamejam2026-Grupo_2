@@ -38,7 +38,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Pattern" type="Timer" parent="." unique_id=1049099354]
-wait_time = 40.0
+wait_time = 120.0
 autostart = true
 
 [node name="Elite" type="Timer" parent="." unique_id=453179282]

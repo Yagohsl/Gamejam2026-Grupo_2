@@ -3,10 +3,10 @@ extends CharacterBody2D
 @export var player = CharacterBody2D
 var damage_popup = preload("res://enemies/damage.tscn")
 var direction : Vector2
-@export var speed : float = 120.0
 var damage : float
 var knockback : Vector2
 var dist_rendering : float
+var speed : float
 
 
 var drop = preload("res://pickup/coletavel.tscn")
@@ -25,6 +25,7 @@ var type: Enemy:
 		$Sprite2D.vframes = type.vframes
 		damage = value.damage
 		health = value.health
+		speed = value.speed
 		
 
 func _physics_process(delta: float) -> void:
