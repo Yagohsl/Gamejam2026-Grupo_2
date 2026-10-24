@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://25snf6e0wtg"]
 
 [ext_resource type="Script" uid="uid://cnux5iknmf4x8" path="res://screens/main_menu.gd" id="1_ocono"]
+[ext_resource type="FontFile" uid="uid://bnpnrnyfu6xtq" path="res://assets/font/Crimson Horror One.otf" id="2_5mnfb"]
+[ext_resource type="FontFile" uid="uid://bodf2vbx1syqm" path="res://assets/font/Halloweenpixels.ttf" id="2_t3bh0"]
+[ext_resource type="Texture2D" uid="uid://dtcn0f7sc0t7c" path="res://assets/font/fatec_logo.png" id="3_5mnfb"]
+[ext_resource type="FontFile" uid="uid://miuojhkddxus" path="res://assets/font/Crimson Horror.otf" id="5_wu0qq"]
+
+[sub_resource type="Gradient" id="Gradient_5mnfb"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.74558026, 0.7455802, 0.7455802, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wu0qq"]
+gradient = SubResource("Gradient_5mnfb")
 
 [node name="MainMenu" type="Control" unique_id=1528902421]
 layout_mode = 3
@@ -19,6 +30,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Menu" unique_id=698262766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_wu0qq")
+
 [node name="BtnJogar" type="Button" parent="Menu" unique_id=208553868]
 layout_mode = 1
 anchors_preset = 8
@@ -32,7 +52,14 @@ offset_right = 91.0
 offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.1404472, 0.14044762, 0.14044723, 1)
+theme_override_colors/font_focus_color = Color(0.4857034, 0.4857034, 0.48570448, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.4862745, 0.4862745, 1)
+theme_override_fonts/font = ExtResource("2_5mnfb")
+theme_override_font_sizes/font_size = 42
 text = "Jogar"
+flat = true
 
 [node name="BtnSair" type="Button" parent="Menu" unique_id=2084589976]
 layout_mode = 1
@@ -47,21 +74,60 @@ offset_right = 91.0
 offset_bottom = 137.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12955824, 0.1295586, 0.12955832, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.4862745, 0.4862745, 1)
+theme_override_fonts/font = ExtResource("2_5mnfb")
+theme_override_font_sizes/font_size = 42
 text = "Sair
 "
+flat = true
 
-[node name="Label" type="Label" parent="Menu" unique_id=1496564463]
+[node name="Label" type="RichTextLabel" parent="Menu" unique_id=801143102]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.0
+offset_top = -253.5
+offset_right = 402.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 0.3019608, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_t3bh0")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[shake rate=10.0 level=2 connected=0]Phantom Chaos[/shake]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Logo" type="TextureRect" parent="Menu" unique_id=1853552172]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -209.0
-offset_right = 209.0
-offset_bottom = 151.0
+offset_left = -177.0
+offset_top = -15.0
+offset_right = 177.0
+offset_bottom = 221.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 40
-text = "Fatec Phantom Chaos"
-vertical_alignment = 1
+texture = ExtResource("3_5mnfb")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="Menu" unique_id=1876268417]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 530.0
+offset_right = 140.0
+offset_bottom = 557.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_wu0qq")
+theme_override_font_sizes/font_size = 21
+text = "Team YANE"
 
 [connection signal="pressed" from="Menu/BtnJogar" to="." method="_on_btn_jogar_pressed"]
 [connection signal="pressed" from="Menu/BtnSair" to="." method="_on_btn_sair_pressed"]

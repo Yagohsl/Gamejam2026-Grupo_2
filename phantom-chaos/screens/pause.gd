@@ -1,6 +1,6 @@
 extends CanvasLayer
 @export var upgrade_box : Node
-
+@export var game_over : Node
 func _ready(): 
 	visible = false
 	
@@ -12,7 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var player = get_tree().get_first_node_in_group("player")
 		if player:
 			var upgrade_box = player.get_node("UI/Options")
-			if upgrade_box and upgrade_box.visible:
+			if upgrade_box.visible or game_over.visible:
 				return
 		
 		alternar_pausa()
