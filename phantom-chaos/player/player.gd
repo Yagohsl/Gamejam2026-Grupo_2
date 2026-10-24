@@ -1,4 +1,6 @@
 extends CharacterBody2D
+@export var slot : PanelContainer
+
 @export var game_over : CanvasLayer
 var max_health: float = 100:
 	set(value):
@@ -44,7 +46,8 @@ var facing_direction: Vector2 = Vector2.RIGHT
 @onready var anim = $AnimationPlayer
 
 
-
+func _ready():
+	slot.item = Global.arma_escolhida
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(nearest_enemy):
 		nearest_enemy_distance = nearest_enemy.dist_rendering
@@ -54,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		
 	# movimentacao 
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
-	move_and_collide(velocity * delta)
+	move_and_slide()
 	
 	if velocity.length() > 0:
 		if velocity.x < 0:
@@ -69,11 +72,6 @@ func _physics_process(delta: float) -> void:
 	check_XP()
 	health += recovery * delta
 	
-	#impede velocidade dobrada na diagonal
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-	
-
 
 
 func _on_self_damage_body_entered(body: Node2D) -> void:
