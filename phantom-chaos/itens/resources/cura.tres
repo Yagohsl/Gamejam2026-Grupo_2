@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PickupCura" format=3 uid="uid://db62byiu80sv4"]
+
+[ext_resource type="Texture2D" uid="uid://cmr611rtncdca" path="res://assets/icons/heart_X400.png" id="1_axsue"]
+[ext_resource type="Script" uid="uid://bn0mb1y4u1tlx" path="res://itens/item_cura.gd" id="2_c4ffh"]
+
+[resource]
+script = ExtResource("2_c4ffh")
+title = "Cura"
+icon = ExtResource("1_axsue")
+metadata/_custom_type_script = "uid://bn0mb1y4u1tlx"
