@@ -6,27 +6,30 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fwpam"]
 size = Vector2(64, 64)
 
-[sub_resource type="Resource" id="Resource_mvpq7"]
+[sub_resource type="Resource" id="Resource_bywms"]
 script = ExtResource("2_61qvf")
 description = "+25 Vida Máxima"
+health = 25.0
 max_health = 25.0
 metadata/_custom_type_script = "uid://d21whgg3towkh"
 
 [sub_resource type="Resource" id="Resource_e6yb1"]
 script = ExtResource("2_61qvf")
 description = "+30 Vida Máxima"
+health = 30.0
 max_health = 30.0
 metadata/_custom_type_script = "uid://d21whgg3towkh"
 
 [sub_resource type="Resource" id="Resource_a5ngy"]
 script = ExtResource("2_61qvf")
 description = "+35 Vida Máxima"
+health = 35.0
 max_health = 35.0
 metadata/_custom_type_script = "uid://d21whgg3towkh"
 
 [resource]
 script = ExtResource("1_bywms")
-upgrades = Array[ExtResource("2_61qvf")]([SubResource("Resource_mvpq7"), SubResource("Resource_e6yb1"), SubResource("Resource_a5ngy")])
+upgrades = Array[ExtResource("2_61qvf")]([SubResource("Resource_bywms"), SubResource("Resource_e6yb1"), SubResource("Resource_a5ngy")])
 title = "Vida"
 texture = SubResource("PlaceholderTexture2D_fwpam")
 metadata/_custom_type_script = "uid://bb4xpupqo5cep"
