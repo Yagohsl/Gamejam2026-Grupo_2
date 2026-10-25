@@ -4080,6 +4080,7 @@ _data = {
 [node name="Arena" type="Node2D" unique_id=996573635 node_paths=PackedStringArray("player")]
 script = ExtResource("1_75ymw")
 player = NodePath("Player")
+level_do_boss = 25
 
 [node name="Mapa" type="Node2D" parent="." unique_id=743164435]
 position = Vector2(198, 184)
