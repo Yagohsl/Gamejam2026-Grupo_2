@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cm3otlawymiao"]
+
+[ext_resource type="Texture2D" uid="uid://tr8xouwmnilf" path="res://assets/itens/scythe01_spin_X100.png" id="1_3s7jj"]
+[ext_resource type="Script" uid="uid://iu0i68v8owce" path="res://enemies/projectile_boss.gd" id="1_au71m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_au71m"]
+
+[node name="ProjectileBoss" type="Area2D" unique_id=1706901310]
+collision_layer = 0
+script = ExtResource("1_au71m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=803805941]
+texture = ExtResource("1_3s7jj")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924432375]
+shape = SubResource("CapsuleShape2D_au71m")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1330996819]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
