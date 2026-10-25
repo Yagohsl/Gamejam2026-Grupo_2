@@ -5,11 +5,12 @@
 [ext_resource type="Script" uid="uid://cqpabsa3xhq26" path="res://enemies/enemy_type.gd" id="3_m3jg8"]
 [ext_resource type="Resource" uid="uid://uthltrrrla1l" path="res://enemies/resources/fantasminha.tres" id="4_fq7nl"]
 [ext_resource type="Resource" uid="uid://bbhkcv3l6gvr4" path="res://enemies/resources/lobisome.tres" id="5_fq7nl"]
+[ext_resource type="Resource" uid="uid://bvfwl8a78fta2" path="res://enemies/resources/zumbi.tres" id="6_x0xy4"]
 
 [node name="Spawner" type="Node2D" unique_id=438922561]
 script = ExtResource("1_fpwof")
 enemy = ExtResource("2_6hs48")
-enemy_types = Array[ExtResource("3_m3jg8")]([ExtResource("4_fq7nl"), ExtResource("5_fq7nl")])
+enemy_types = Array[ExtResource("3_m3jg8")]([ExtResource("4_fq7nl"), ExtResource("6_x0xy4"), ExtResource("5_fq7nl")])
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1773188057]
 visible = false

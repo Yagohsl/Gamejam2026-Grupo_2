@@ -99,7 +99,7 @@ func drop_item():
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
 	
-	if randf() <= 1.00:
+	if randf() <= 0.05:
 		var item_cura = drop.instantiate()
 		
 		item_cura.type = preload("res://itens/resources/cura.tres")

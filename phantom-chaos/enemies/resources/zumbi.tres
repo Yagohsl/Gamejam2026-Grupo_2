@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://bvfwl8a78fta2"]
+
+[ext_resource type="Script" uid="uid://dwoylvl3nkqmo" path="res://pickup/PickupResource.gd" id="1_gj5lf"]
+[ext_resource type="Resource" uid="uid://b47c5yc3ao430" path="res://pickup/resources/mid_xp.tres" id="2_c5uq6"]
+[ext_resource type="Script" uid="uid://cqpabsa3xhq26" path="res://enemies/enemy_type.gd" id="2_uxlwa"]
+[ext_resource type="Texture2D" uid="uid://doflkw06lvg0b" path="res://assets/enemies/zumbi_X100.png" id="3_c5uq6"]
+
+[resource]
+script = ExtResource("2_uxlwa")
+title = "Zumbi"
+health = 7.0
+texture = ExtResource("3_c5uq6")
+hframes = 8
+vframes = 1
+scale_modifier = Vector2(1.8, 1.8)
+damage = 4.0
+speed = 80.0
+drops = Array[ExtResource("1_gj5lf")]([ExtResource("2_c5uq6")])
+metadata/_custom_type_script = "uid://cqpabsa3xhq26"

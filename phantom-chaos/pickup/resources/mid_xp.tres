@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Experience" format=3 uid="uid://b47c5yc3ao430"]
+
+[ext_resource type="Texture2D" uid="uid://cupsmuycktskm" path="res://assets/objects/xp_sheet100.png" id="1_qce4y"]
+[ext_resource type="Script" uid="uid://xpv0y7t0nwpr" path="res://pickup/Experience.gd" id="2_ouw6p"]
+
+[resource]
+script = ExtResource("2_ouw6p")
+XP = 3.0
+title = "MedXP"
+icon = ExtResource("1_qce4y")
+hframes = 4
+vframes = 2
+scale_modifier = Vector2(2.5, 2.5)
+metadata/_custom_type_script = "uid://xpv0y7t0nwpr"

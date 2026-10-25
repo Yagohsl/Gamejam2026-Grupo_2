@@ -8,12 +8,12 @@
 [resource]
 script = ExtResource("4_s2ed1")
 title = "lobisomem"
-health = 7.0
+health = 10.0
 texture = ExtResource("4_mbym6")
 hframes = 11
 vframes = 1
 scale_modifier = Vector2(0.3, 0.3)
-damage = 4.0
+damage = 8.0
 speed = 85.0
 drops = Array[ExtResource("1_mbym6")]([ExtResource("2_mbym6")])
 metadata/_custom_type_script = "uid://cqpabsa3xhq26"
