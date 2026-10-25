@@ -16,19 +16,24 @@ var magnet : float = 0:
 	set(value):
 		magnet = value
 		%Magnet.shape.radius = 60 + value
-
+var cheat_code : String = ""
 var health : float = 100:
 	#atualiza a barra de vida
 	set(value):
 		health = max(value,0)
 		%Health.value = value
 var nearest_enemy : CharacterBody2D
-var nearest_enemy_distance : float = 150 + area
+var nearest_enemy_distance : float = 250 + area
 		
 var XP : int = 0:
 	set(value):
 		XP = value
 		%XP.value = value
+		
+		if level >= 3:
+			%XP.max_value = 20
+		elif level >= 7:
+			%XP.max_value = 40
 
 var total_xp : int = 0
 var level : int = 1:
@@ -95,7 +100,6 @@ func check_XP():
 	if XP > %XP.max_value:
 		XP -= %XP.max_value
 		level+= 1
-		%XP.max_value += 10
 
 
 func _on_magnet_area_entered(area: Area2D) -> void:
@@ -106,4 +110,17 @@ func _set_facing_direction(facing_left: bool) -> void:
 	sprite.flip_h = facing_left
 	
 
-	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		var tecla = OS.get_keycode_string(event.keycode).to_lower()
+		
+		if tecla.length() == 1:
+			cheat_code += tecla
+			if cheat_code.length() > 15:
+				cheat_code = cheat_code.substr(cheat_code.length() - 15)
+			if cheat_code.ends_with("teamyane"):
+				ativar_cheat_xp()
+				cheat_code = ""
+
+func ativar_cheat_xp():
+	XP += 2000

@@ -23,7 +23,7 @@ gradient = SubResource("Gradient_g1dw6")
 height = 20
 
 [sub_resource type="Gradient" id="Gradient_qjkh3"]
-colors = PackedColorArray(4.933402e-07, 0, 0.3007131, 1, 0.4487393, 0.99999994, 0.9971048, 1)
+colors = PackedColorArray(0, 0.4077535, 0.07417277, 1, 0.44705883, 0.87058824, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_g6k8r"]
 gradient = SubResource("Gradient_qjkh3")
@@ -95,6 +95,7 @@ height = 58.0
 radius = 60.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1147411066 node_paths=PackedStringArray("slot")]
+z_index = 2
 script = ExtResource("1_onrkg")
 slot = NodePath("UI/Armas/Slot")
 speed = 150
@@ -179,6 +180,17 @@ script = ExtResource("4_yw30f")
 weapons = NodePath("../Armas")
 passive_items = NodePath("../ArmasPassivas")
 
+[node name="BossBar" type="ProgressBar" parent="UI" unique_id=734139314]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 0, 0, 1)
+offset_left = 98.0
+offset_top = 79.0
+offset_right = 946.0
+offset_bottom = 108.0
+max_value = 1000.0
+value = 100.0
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015191856]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_qjkh3")
@@ -206,6 +218,7 @@ shape = SubResource("CapsuleShape2D_boad6")
 
 [node name="Health" type="ProgressBar" parent="." unique_id=378219711]
 unique_name_in_owner = true
+modulate = Color(0.9647059, 0, 0, 1)
 offset_left = -47.0
 offset_top = -49.0
 offset_right = 48.0
