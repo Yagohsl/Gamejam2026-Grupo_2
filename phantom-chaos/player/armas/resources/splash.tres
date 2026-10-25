@@ -34,7 +34,7 @@ description = "+30% Raio do Splash"
 
 [resource]
 script = ExtResource("2_splash")
-damage = 3.0
+damage = 2.0
 cooldown = 2.0
 upgrades = Array[ExtResource("1_upgrade")]([SubResource("Resource_upg1"), SubResource("Resource_upg2"), SubResource("Resource_upg3"), SubResource("Resource_upg4"), SubResource("Resource_upg5")])
 title = "Splash"

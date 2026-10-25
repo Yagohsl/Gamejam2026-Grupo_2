@@ -2,7 +2,7 @@ extends Area2D
 
 var direction: Vector2
 var speed: float = 300.0
-var damage: float = 12.0
+var damage: float = 16.0
 
 func _physics_process(delta: float) -> void:
 	rotation_degrees += 360 * delta

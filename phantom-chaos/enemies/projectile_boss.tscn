@@ -4,12 +4,15 @@
 [ext_resource type="Script" uid="uid://iu0i68v8owce" path="res://enemies/projectile_boss.gd" id="1_au71m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_au71m"]
+radius = 16.0
+height = 58.0
 
 [node name="ProjectileBoss" type="Area2D" unique_id=1706901310]
 collision_layer = 0
 script = ExtResource("1_au71m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=803805941]
+scale = Vector2(1.7812499, 1.7812499)
 texture = ExtResource("1_3s7jj")
 hframes = 4
 
