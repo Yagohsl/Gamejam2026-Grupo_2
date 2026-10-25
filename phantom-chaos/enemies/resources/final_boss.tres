@@ -2,17 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dwoylvl3nkqmo" path="res://pickup/PickupResource.gd" id="1_3ud6e"]
 [ext_resource type="Script" uid="uid://cqpabsa3xhq26" path="res://enemies/enemy_type.gd" id="2_rkssa"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3ud6e"]
-size = Vector2(64, 64)
+[ext_resource type="Texture2D" uid="uid://dgk73c3q8v5me" path="res://assets/enemies/DiretorOculto_Walk_X100.png" id="3_rkssa"]
 
 [resource]
 script = ExtResource("2_rkssa")
 title = "Final Boss"
 health = 500.0
-texture = SubResource("PlaceholderTexture2D_3ud6e")
-hframes = 1
+texture = ExtResource("3_rkssa")
+hframes = 8
 vframes = 1
+scale_modifier = Vector2(1.3, 1.3)
 damage = 14.0
 speed = 70.0
 metadata/_custom_type_script = "uid://cqpabsa3xhq26"

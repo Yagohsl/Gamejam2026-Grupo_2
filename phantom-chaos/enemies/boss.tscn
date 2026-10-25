@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c161mao4w8iog" path="res://enemies/boss.gd" id="1_7hfrd"]
 [ext_resource type="Resource" uid="uid://fuf1he168inl" path="res://enemies/resources/final_boss.tres" id="2_a60ye"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7hfrd"]
-size = Vector2(64, 64)
+[ext_resource type="Texture2D" uid="uid://cnmsjpk4mpo3r" path="res://assets/characters/diogo.png" id="3_n18d2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a60ye"]
-size = Vector2(64, 64)
+size = Vector2(47, 90)
 
 [node name="Boss" type="CharacterBody2D" unique_id=1902640193]
 collision_layer = 2
@@ -16,12 +14,14 @@ script = ExtResource("1_7hfrd")
 type = ExtResource("2_a60ye")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=437433895]
-position = Vector2(-32, -32)
-texture = SubResource("PlaceholderTexture2D_7hfrd")
+position = Vector2(-24.999998, -53.999996)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_n18d2")
 centered = false
+hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1091792735]
-position = Vector2(1, -1)
+position = Vector2(-0.5, -3)
 shape = SubResource("RectangleShape2D_a60ye")
 
 [node name="Timer" type="Timer" parent="." unique_id=1437228767]
