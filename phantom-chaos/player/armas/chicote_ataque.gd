@@ -6,8 +6,12 @@ var direction: Vector2 = Vector2.RIGHT
 var area_scale: float = 1.0
 
 var hit_enemies: Array[Node2D] = []
+@onready var som_ataque = $AudioStreamPlayer2D
 
 func _ready() -> void:
+	som_ataque.pitch_scale = randf_range(0.8, 1.2)
+	som_ataque.play(0.7)
+	
 	# aplica a escala de area e espelhamento horizontal
 	var dir_sign = -1.0 if direction.x < 0 else 1.0
 	scale = Vector2(dir_sign * area_scale, area_scale)
@@ -34,8 +38,15 @@ func _play_animation() -> void:
 	tween.tween_interval(0.08)
 	# fade out suave 
 	tween.tween_property(self, "modulate:a", 0.0, 0.09)
-	tween.tween_callback(queue_free)
+	tween.tween_callback(_finalizar_ataque)
+	
+func _finalizar_ataque() -> void:
+	set_deferred("monitoring", false)
 
+	if som_ataque.playing:
+		await som_ataque.finished
+	queue_free() 
+	
 func _on_body_entered(body: Node2D) -> void:
 	_apply_hit(body)
 

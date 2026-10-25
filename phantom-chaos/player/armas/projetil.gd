@@ -6,8 +6,11 @@ var speed : float = 200
 var damage : float = 1
 var knockback : float = 90
 var source 
+@onready var som_disparo = $AudioStreamPlayer2D
 
 func _ready():
+	som_disparo.pitch_scale = randf_range(0.8, 1.2)
+	som_disparo.play(0.7)
 	rotation = direction.angle()
 	
 func _physics_process(delta: float) -> void:

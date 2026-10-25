@@ -7,8 +7,10 @@ var damage_interval: float = 0.5
 var source                         
 
 var _tick_timer: float = 0.0
-
+@onready var som_acerto = $AudioStreamPlayer2D
 func _ready() -> void:
+	som_acerto.pitch_scale = randf_range(0.9, 1.1)
+	som_acerto.play()
 	z_index = -1
 	
 	# checa inimigos que já estão na zona ao spawnar

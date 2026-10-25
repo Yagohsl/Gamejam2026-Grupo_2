@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c68jpc763uh05" path="res://player/armas/SplashAttack.gd" id="1_splash"]
 [ext_resource type="Texture2D" uid="uid://py4jn21q8eqx" path="res://assets/itens/quimicoVerde01_X400.png" id="2_djuqo"]
+[ext_resource type="AudioStream" uid="uid://he3ix1yrse8g" path="res://audio/sfx/20. quebrando algo.wav" id="3_r3tvv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_splash"]
 resource_local_to_scene = true
@@ -17,7 +18,7 @@ script = ExtResource("1_splash")
 shape = SubResource("CircleShape2D_splash")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=100000003]
-z_index = -1
+z_index = 1
 texture_repeat = 2
 position = Vector2(-4.125, -56.874992)
 scale = Vector2(2.0976563, 3.2148438)
@@ -25,5 +26,9 @@ texture = ExtResource("2_djuqo")
 hframes = 5
 vframes = 2
 frame = 9
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2062988458]
+stream = ExtResource("3_r3tvv")
+volume_db = -25.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
