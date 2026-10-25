@@ -7,7 +7,10 @@ var damage : float
 var knockback : Vector2
 var dist_rendering : float
 var speed : float
-
+var current_frame : float = 0.0
+var anim_fps : float = 10.0 
+var total_frames : int = 1 
+var facing_direction: Vector2 = Vector2.RIGHT
 
 var drop = preload("res://pickup/coletavel.tscn")
 var health: float:
@@ -23,20 +26,35 @@ var type: Enemy:
 		$Sprite2D.texture = value.texture
 		$Sprite2D.hframes = type.hframes
 		$Sprite2D.vframes = type.vframes
+		$Sprite2D.scale = type.scale_modifier
 		damage = value.damage
 		health = value.health
 		speed = value.speed
-		
+		total_frames = type.hframes
+
 
 func _physics_process(delta: float) -> void:
 	check_dist_rendering(delta)
 	knockback_update(delta)
+	if total_frames > 1:
+		current_frame += anim_fps * delta
+		#reseta o ciclo quando atinge o ultimo frame
+	if current_frame >= total_frames:
+		current_frame = 0.0
+		
+	$Sprite2D.frame = int(current_frame)
+	
+	if player:
+		if player.global_position.x > global_position.x:
+			$Sprite2D.flip_h = false 
+		else:
+			$Sprite2D.flip_h = true  
 	 
 func check_dist_rendering(delta):
 	dist_rendering = (player.position - position).length()
 	#otimizacao
-	# se o inimigo esta a uma distancia maior que 600px, despawna
-	if dist_rendering >= 600: queue_free()
+	# se o inimigo esta a uma distancia maior que 700px, despawna
+	if dist_rendering >= 700: queue_free()
 	
 	if dist_rendering < player.nearest_enemy_distance:
 		player.nearest_enemy = self
@@ -80,4 +98,12 @@ func drop_item():
 	item_to_drop.player = player
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
+	
+	if randf() <= 1.00:
+		var item_cura = drop.instantiate()
+		
+		item_cura.type = preload("res://itens/resources/cura.tres")
+		item_cura.position = position + Vector2(10, 10) 
+		item_cura.player = player
+		get_tree().current_scene.call_deferred("add_child", item_cura)
 	
