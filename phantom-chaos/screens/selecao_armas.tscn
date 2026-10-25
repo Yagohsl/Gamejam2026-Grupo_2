@@ -1,18 +1,202 @@
 [gd_scene format=3 uid="uid://b7k6pjx3wpufu"]
 
 [ext_resource type="Script" uid="uid://bpodqg55ow1lg" path="res://screens/selecao_armas.gd" id="1_1p4yq"]
+[ext_resource type="Texture2D" uid="uid://bonxqqv73siwo" path="res://assets/itens/mouse01_X400.png" id="2_8o8da"]
 [ext_resource type="Texture2D" uid="uid://ot0ud0oaoqv0" path="res://assets/itens/regua01_x100.png" id="2_pmntt"]
 [ext_resource type="Texture2D" uid="uid://bbq0llr0xrybk" path="res://assets/itens/quimicoVerdeIcon.png" id="3_8o8da"]
 
-[sub_resource type="Gradient" id="Gradient_qd718"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.10747976, 0.10747973, 0.10747973, 1)
+[sub_resource type="Gradient" id="Gradient_pmntt"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.039215688, 0.06666667, 0.15686275, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pmntt"]
-gradient = SubResource("Gradient_qd718")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8o8da"]
+gradient = SubResource("Gradient_pmntt")
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aimdu"]
-size = Vector2(64, 64)
+[sub_resource type="Animation" id="Animation_aimdu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arma:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("regua:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("mouse:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("frasco:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_pmntt"]
+resource_name = "mostrar_armas"
+length = 1.5666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arma:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("regua:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("mouse:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("frasco:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_061kx"]
+resource_name = "mostrar_texto"
+length = 5.133333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("regua:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mouse:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("frasco:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nj46h"]
+_data = {
+&"RESET": SubResource("Animation_aimdu"),
+&"mostrar_armas": SubResource("Animation_pmntt"),
+&"mostrar_texto": SubResource("Animation_061kx")
+}
 
 [node name="SelecaoArmas" type="Control" unique_id=261970485]
 layout_mode = 3
@@ -30,9 +214,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_pmntt")
+texture = SubResource("GradientTexture2D_8o8da")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1095186484]
+[node name="TextoIntroducao" type="RichTextLabel" parent="." unique_id=1095186484]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -370.0
+offset_top = 71.0
+offset_right = 420.0
+offset_bottom = 343.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.75686276, 0.75686276, 0.75686276, 1)
+text = "Você é Lídia, uma estudante da Fatec Campinas.  Infelizmente, seu celular descarregou e você não viu o aviso de que hoje, dia 30, não haveria aula e foi para a faculdade, que estava vazia.
+
+Pouco depois de chegar, sons estranhos de trovões, uivos e gritos tomaram o ar, como se viessem do cemitério. O céu ficou completamente nublado.
+Na hora era impossível saber, mas no cemitério próximo à Fatec alguém havia iniciado um ritual que deu muito errado. Agora monstros, mortos-vivos e espíritos assombram a região.
+
+Você precisa sobreviver com o que tiver à disposição até que o ritual falho seja cancelado.
+
+Boa sorte.
+"
+
+[node name="Arma" type="RichTextLabel" parent="." unique_id=823887201]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,17 +246,50 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -266.5
-offset_top = -99.0
+offset_top = 49.0
 offset_right = 266.5
-offset_bottom = 99.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Escolha a arma"
+theme_override_colors/default_color = Color(0.75686276, 0.75686276, 0.75686276, 1)
+text = "Escolha seu equipamento"
 horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1367394955]
+libraries/ = SubResource("AnimationLibrary_nj46h")
+
+[node name="regua" type="RichTextLabel" parent="." unique_id=2055539381]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 509.0
+offset_right = 532.0
+offset_bottom = 562.0
+bbcode_enabled = true
+text = "[shake rate=10.0 level=2 connected=0]Régua[/shake]"
+horizontal_alignment = 1
+
+[node name="mouse" type="RichTextLabel" parent="." unique_id=776123316]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 512.0
+offset_right = 373.0
+offset_bottom = 565.0
+bbcode_enabled = true
+text = "[shake rate=10.0 level=2 connected=0]Mouse[/shake]"
+horizontal_alignment = 1
+
+[node name="frasco" type="RichTextLabel" parent="." unique_id=997686317]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 509.0
+offset_right = 738.0
+offset_bottom = 562.0
+bbcode_enabled = true
+text = "[shake rate=10.0 level=2 connected=0]Frasco Químico[/shake]"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1002028373]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -58,9 +297,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -300.0
-offset_top = -223.0
+offset_top = -167.0
 offset_right = 312.0
-offset_bottom = -159.0
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 100
@@ -70,7 +309,7 @@ alignment = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = SubResource("PlaceholderTexture2D_aimdu")
+texture_normal = ExtResource("2_8o8da")
 
 [node name="BtnArma2" type="TextureButton" parent="HBoxContainer" unique_id=1569022316]
 custom_minimum_size = Vector2(64, 64)

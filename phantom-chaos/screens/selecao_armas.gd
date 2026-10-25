@@ -1,11 +1,15 @@
 extends Control
-# Carrega os recursos das armas do seu projeto
+
 var chicote = preload("res://player/armas/resources/chicote.tres")
 var projetil = preload("res://player/armas/resources/projetil.tres")
 var splash = preload("res://player/armas/resources/splash.tres")
 
+@onready var anim = $AnimationPlayer
 
-
+func _ready():
+	anim.play("mostrar_texto")
+	await anim.animation_finished
+	anim.play("mostrar_armas")
 
 func _on_btn_arma_1_pressed() -> void:
 	iniciar_jogo(chicote)
