@@ -17,6 +17,7 @@ func upgrade_item():
 	
 	var upgrade = upgrades[level - 1]
 	
+	player.health += upgrade.health
 	player.max_health += upgrade.max_health
 	player.recovery += upgrade.recovery
 	player.speed += upgrade.speed
