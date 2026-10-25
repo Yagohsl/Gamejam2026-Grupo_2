@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://he3ix1yrse8g"
+path="res://.godot/imported/20. quebrando algo.wav-4dbb633a0fe1a533517a55c0f445f787.sample"
+
+[deps]
+
+source_file="res://audio/sfx/20. quebrando algo.wav"
+dest_files=["res://.godot/imported/20. quebrando algo.wav-4dbb633a0fe1a533517a55c0f445f787.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
