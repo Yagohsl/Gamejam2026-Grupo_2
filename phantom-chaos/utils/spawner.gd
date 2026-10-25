@@ -37,7 +37,7 @@ func spawn(pos : Vector2):
 	var enemy_instance = enemy.instantiate()
 	
 	#um inimigo diferente a cada minuto
-	enemy_instance.type = enemy_types[min(minute, enemy_types.size() -1)]
+	enemy_instance.type = enemy_types[minute % enemy_types.size()]
 	#indica a posicao do inimigo e do player
 	enemy_instance.position = pos
 	enemy_instance.player = player

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://bbhkcv3l6gvr4"]
+
+[ext_resource type="Script" uid="uid://dwoylvl3nkqmo" path="res://pickup/PickupResource.gd" id="1_mbym6"]
+[ext_resource type="Resource" uid="uid://cwhixsub07tv8" path="res://pickup/resources/big_xp.tres" id="2_mbym6"]
+[ext_resource type="Texture2D" uid="uid://cvh58pb3hgeoj" path="res://assets/enemies/werewolf_walk_X400.png" id="4_mbym6"]
+[ext_resource type="Script" uid="uid://cqpabsa3xhq26" path="res://enemies/enemy_type.gd" id="4_s2ed1"]
+
+[resource]
+script = ExtResource("4_s2ed1")
+title = "lobisomem"
+health = 7.0
+texture = ExtResource("4_mbym6")
+hframes = 11
+vframes = 1
+scale_modifier = Vector2(0.3, 0.3)
+damage = 4.0
+speed = 85.0
+drops = Array[ExtResource("1_mbym6")]([ExtResource("2_mbym6")])
+metadata/_custom_type_script = "uid://cqpabsa3xhq26"
