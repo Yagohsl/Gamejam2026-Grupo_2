@@ -34,6 +34,8 @@ var XP : int = 0:
 			%XP.max_value = 20
 		elif level >= 7:
 			%XP.max_value = 40
+		elif level >= 12:
+			%XP.max_value = 60
 
 var total_xp : int = 0
 var level : int = 1:
@@ -84,6 +86,10 @@ func _on_self_damage_body_entered(body: Node2D) -> void:
 
 #funcao pra reduzir a vida
 func take_damage(amount):
+	var tween = get_tree().create_tween()
+	tween.tween_property($Sprite2D, "modulate", Color(1.0, 0.103, 0.205, 1.0), 0.2)
+	tween.chain().tween_property($Sprite2D, "modulate", Color(1, 1, 1), 0.2)
+	tween.bind_node(self)
 	health -= amount
 	if health <=0:
 		game_over.ativar_game_over()
