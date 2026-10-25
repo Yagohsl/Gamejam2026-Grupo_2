@@ -121,10 +121,30 @@ Os arquivos de licença e de informações presentes no projeto permitem identif
 **Uso de IA generativa:** Foi utilizado como: Ajuda para traduzir o mapa da fatec campinas para o jogo;  auxílio na criação de alguns spritesheets complexos (como do boss final); Como auxílio na criação do relatório final.
 
 ## 12. Galeria Demonstrativa
+#### Menu Inicial
+
+#### Introdução e seleção de arma
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/8a3d2622-0ee0-417a-905e-14da7cbfdc2c" />
+
+#### Menu de melhorias
+<img width="279" height="174" alt="image" src="https://github.com/user-attachments/assets/256be157-2271-4ac3-9f13-42a58fd39d94" />
+Uma lista de melhorias disponíveis após coletar XP (Pontos de Experiência) o bastante
+
+#### Menu de opções
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/bdcfeed2-66f0-44e2-88ad-fa02e681f322" />
+
+#### Combate
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/13956432-8eec-4ce5-851d-3ff53ab21538" />
+<img width="1000" height="600" alt="20261025-0245-41 0602966" src="https://github.com/user-attachments/assets/aa2d11c1-09bf-4b15-b5ef-172b2d1ce143" />
 
 
-- **Gameplay geral:** inserir uma captura ou GIF real mostrando a personagem e os inimigos na arena.
-- **Armas e melhorias:** inserir uma captura da seleção inicial de arma e/ou da tela de opções de melhoria.
-- **Menu e tela de Game Over:** inserir capturas das telas efetivamente implementadas.
+### GIFs de spritesheets
+<img width="128" height="192" alt="zumb400i" src="https://github.com/user-attachments/assets/48289e13-fd83-4589-b86e-3157f79958df" />
+<img width="128" height="128" alt="spinningLilGhost" src="https://github.com/user-attachments/assets/0b71ab16-9b2a-4cdf-8861-719f81e1bf34" />
+<img width="128" height="192" alt="MC1-Sheet_NoArm_R-Sheet" src="https://github.com/user-attachments/assets/c0cecbf7-8fac-4556-ae7f-ed08914f3e9e" />
+
+
+
+
 
 ---
