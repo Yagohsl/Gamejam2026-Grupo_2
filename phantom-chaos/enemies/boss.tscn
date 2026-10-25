@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b0ilr3bckp6ks"]
+
+[ext_resource type="Script" uid="uid://c161mao4w8iog" path="res://enemies/boss.gd" id="1_7hfrd"]
+[ext_resource type="Resource" uid="uid://fuf1he168inl" path="res://enemies/resources/final_boss.tres" id="2_a60ye"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7hfrd"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a60ye"]
+size = Vector2(64, 64)
+
+[node name="Boss" type="CharacterBody2D" unique_id=1902640193]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_7hfrd")
+type = ExtResource("2_a60ye")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=437433895]
+position = Vector2(-32, -32)
+texture = SubResource("PlaceholderTexture2D_7hfrd")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1091792735]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_a60ye")
+
+[node name="Timer" type="Timer" parent="." unique_id=1437228767]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
